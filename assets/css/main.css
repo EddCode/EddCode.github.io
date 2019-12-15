@@ -1,0 +1,350 @@
+:root{
+  /**
+   *  ========> COLORS
+   * */
+  --primary-color: hsl(0deg, 0%, 10%);
+  --secondary-color: hsl(0deg, 0%, 20%);
+  --accent-color: hsl(275deg, 77%, 49%);
+  --complementary-color: hsl(174deg, 98%, 57%);
+	  
+  --white: #FFF;
+  --blue: hsl(202deg, 84%, 36%);
+  --red: hsl(350deg, 100%, 50%);
+  --red-contrast: hsl(0deg, 100%, 31%);
+
+  --background-dark: var(--primary-color);`:w
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+/**
+ * ===========
+ *	Generals
+ * ===========
+ * */
+
+body{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  color: #FFF;
+  color: var(--white);
+  background-color: hsl(0deg, 0%, 10%);
+  background-color: var(--background-dark);
+  /** === Max whidth monile only  ===*/
+  max-width: 450px;
+  margin: auto;
+  position: relative;
+}
+
+h1,h2,h3{
+  font-family: 'Montserrat';
+}
+
+.flex{
+  display: -webkit-box;
+  display: flex
+}
+
+.flex.wrap{
+	flex-wrap: wrap;
+  }
+
+.flex.column{
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
+  }
+
+.flex.main-axis.center{
+	  -webkit-box-pack: center;
+	          justify-content: center;
+	}
+
+.flex.main-axis.end{
+	  -webkit-box-pack: end;
+	          justify-content: flex-end;
+	}
+
+.flex.main-axis.around:{
+	  justify-content: space-around;
+	}
+
+.flex.main-axis.evenly{
+	  -webkit-box-pack: space-evenly;
+	          justify-content: space-evenly;
+	}
+
+.flex.main-axis.between{
+	  -webkit-box-pack: justify;
+	          justify-content: space-between;
+	}
+
+.flex.cross-axis.center{
+	  -webkit-box-align: center;
+	          align-items: center;
+	}
+
+.flex.cross-axis.end{
+	  -webkit-box-align: end;
+	          align-items: flex-end;
+	}
+
+.flex.cross-axis.strech{
+	  -webkit-box-align: stretch;
+	          align-items: stretch;
+	}
+
+.unstyle-list{
+  list-style: none;
+  padding: 0;
+}
+
+.unstyle-decorate{
+  text-decoration: none;
+  list-style: none;
+}
+
+main, header, footer{
+  padding: 0 1em;
+}
+
+a{
+  color: hsl(174deg, 98%, 57%);
+  color: var(--complementary-color);
+}
+
+/**
+ * ===========
+ *	 MENU
+ * ===========
+ * */
+  .menu{
+	padding: 0 16px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
+	box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
+	background-color: hsl(0deg, 0%, 20%);
+	background-color: var(--secondary-color);
+	-webkit-transform: translateX(-450px);
+	        transform: translateX(-450px);
+	-webkit-transition:  .5s;
+	transition:  .5s;
+	z-index: 1;
+	 /* ==> spread menu list & menu social networks  <==*/
+	-webkit-box-pack: justify;
+	        justify-content: space-between
+  }
+  .menu.active{
+	  -webkit-transform: translateX(0);
+	          transform: translateX(0);
+	}
+  .menu .menu__list{
+	  padding: 0 1em;
+	}
+  .menu .list__item{
+	  margin: .9em 0;
+	}
+  .menu .list__item--title{
+	  margin: 0
+	}
+  .menu .list__item--title + .list__item--description{
+		font-size: .7em;
+		font-family: Acme;
+	  }
+  .menu .list__item a {
+	  color: hsl(174deg, 98%, 57%);
+	  color: var(--complementary-color)
+	}
+  .menu .list__item a:hover{
+		color: hsl(202deg, 84%, 36%);
+		color: var(--blue);
+	  }
+  .menu .social__container{
+	  width: 100%;
+	}
+
+.menu-icon{
+  position: fixed;
+  top: 1em;
+  left: .8em;
+  z-index:2;
+  cursor: pointer;
+  height: 10px;
+  width: 10px
+}
+
+.menu-icon .fas {
+	font-size: 1.4em;
+	color: hsl(202deg, 84%, 36%);
+	color: var(--blue);
+  }
+
+
+
+/**
+ * ==========
+ *	Header
+ * ===========
+ * */
+.wrapper__container{
+  text-align:center
+}
+.wrapper__container .wrapper__title{
+	font-family: 'Oswald Stencil';
+  }
+.wrapper__container .wrapper__container__img{
+	width: 100%;
+	margin: auto
+  }
+.wrapper__container .wrapper__container__img img{
+	  width: inherit;
+	}
+
+
+/**
+ * ===========
+ *	Biography
+ * ===========
+ * */
+.biography__container {
+  width: 100%
+}
+.biography__container .title--biography{
+	font-family: 'Oswald DemiBold';
+  }
+.biography__container .photo-me{
+	width: 100%;
+	margin: .5em 0;
+	-webkit-clip-path: circle(30% at 45%);
+	        clip-path: circle(30% at 45%)
+  }
+.biography__container .photo-me img{
+	  width: inherit;
+	}
+
+.biography{
+  margin: auto;
+}
+
+
+/**
+ * ========
+ *	Resume
+ * =========
+ * */
+.resume h5, .resume h6{
+	font-family: Acme;
+  }
+.resume li:before{
+	content: '✔︎';
+	margin-right: .3rem;
+	color: hsl(174deg, 98%, 57%);
+	color: var(--complementary-color);
+  }
+
+.title--skills:not(h6){
+  font-family: 'Oswald DemiBold';
+  font-size: 1.5em;
+}
+
+.github{
+}
+
+.color-gradient{
+  border: none;
+  height: 1px;
+  background: -webkit-gradient(linear, right top, left top, from(hsl(275deg, 77%, 49%)), to(hsl(174deg, 98%, 57%)));
+  background: linear-gradient(to left, hsl(275deg, 77%, 49%), hsl(174deg, 98%, 57%));
+  background: -webkit-gradient(linear, right top, left top, from(var(--accent-color)), to(var(--complementary-color)));
+  background: linear-gradient(to left, var(--accent-color), var(--complementary-color));
+}
+
+.skill-col .title--skills.skills{
+	font-family: Acme;
+	font-size: 1em;
+  }
+
+.skill-col .list-skills{
+	list-style: none;
+	margin: 0 1em
+  }
+
+.skill-col .list-skills:before{
+	  content: '✔︎';
+	  margin-right: .3rem;
+	  color: hsl(275deg, 77%, 49%);
+	  color: var(--accent-color);
+	}
+
+.experience-container{
+  width: 200%;
+  text-align: center
+}
+
+.experience-container .title--skills{
+	font-family: 'Montserrat bolb';
+	font-size: 1em;
+  }
+
+/**
+ * ==========
+ *	Footer
+ * ==========
+ * */
+.footer{
+  text-align: center
+}
+.footer .footer__title{
+	font-family: 'Oswald Stencil';
+	font-size: 2em;
+	color: hsl(275deg, 77%, 49%);
+	color: var(--accent-color);
+	text-shadow: 0 0 2px hsl(174deg, 98%, 57%);
+	text-shadow: 0 0 2px var(--complementary-color);
+  }
+.footer .contact{
+	font-family: 'Montserrat thin';
+	background: hsl(202deg, 84%, 36%);
+	background: var(--blue);
+	color: #FFF;
+	color: var(--white);
+	border-radius: 4px;
+	padding: 1em;
+	border: none;
+	cursor: pointer;
+  }
+.footer .copy-right{
+	font-family: 'Oswald Stencil';
+  }
+
+
+
+
+/**
+ * =========
+ *	@media for device grater than ipad
+ *	allocate nav and burger menu.
+ * */
+@media only screen and (min-width: 769px) {
+  .menu{
+	-webkit-transform: translateX(-232px);
+	        transform: translateX(-232px);
+  }
+
+  .menu-icon{
+	display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px){
+  .menu.active{
+	-webkit-transform: translateX(-160px);
+	        transform: translateX(-160px);
+  }
+}

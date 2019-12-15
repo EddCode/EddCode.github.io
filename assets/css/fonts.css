@@ -1,0 +1,34 @@
+@font-face{
+  font-family: 'Montserrat bolb';
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+@font-face{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Regular.otf);
+}
+
+@font-face{
+  font-family: 'Montserrat thin';
+  src: url(../fonts/Montserrat-Thin.otf);
+}
+
+@font-face{
+  font-family: Acme;
+  src: url(../fonts/Acme-Regular.ttf);
+}
+
+@font-face{
+  font-family: 'Oswald Stencil';
+  src: url(../fonts/Oswald-Stencil.ttf);
+}
+
+@font-face{
+  font-family: Oswald;
+  src: url(../fonts/Oswald-Light.ttf);
+}
+
+@font-face{
+  font-family: 'Oswald DemiBold';
+  src: url(../fonts/Oswald-DemiBold.ttf);
+}

@@ -1,0 +1,24 @@
+{
+  "name": "EddCode.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bulild:css": "postcss assets/css/styles.css -o assets/css/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddCode/EddCode.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EddCode/EddCode.github.io/issues"
+  },
+  "homepage": "https://github.com/EddCode/EddCode.github.io#readme",
+  "devDependencies": {
+    "postcss-cli": "6.1.3",
+    "postcss-preset-env": "6.7.0"
+  }
+}
