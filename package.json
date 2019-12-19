@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bulild:css": "postcss assets/css/styles.css -o assets/css/main.css -w"
+    "build:css": "postcss assets/css/styles.css -o assets/css/main.css -w"
   },
   "repository": {
     "type": "git",

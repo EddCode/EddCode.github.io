@@ -8,11 +8,13 @@
   --complementary-color: hsl(174deg, 98%, 57%);
 	  
   --white: #FFF;
+  --light: hsl(0deg, 0%, 96%);
+  --secondary-light: hsl(0deg, 0%, 92%);
   --blue: hsl(202deg, 84%, 36%);
   --red: hsl(350deg, 100%, 50%);
   --red-contrast: hsl(0deg, 100%, 31%);
 
-  --background-dark: var(--primary-color);`:w
+  --background-dark: var(--primary-color);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
@@ -38,6 +40,9 @@ body{
   margin: auto;
   position: relative;
 }
+
+
+
 
 h1,h2,h3{
   font-family: 'Montserrat';
@@ -162,12 +167,56 @@ a{
 	  color: var(--complementary-color)
 	}
   .menu .list__item a:hover{
-		color: hsl(202deg, 84%, 36%);
-		color: var(--blue);
+		color: rgb(38, 179, 164);
+		color: rgb(38, 179, 164);
 	  }
   .menu .social__container{
 	  width: 100%;
 	}
+  .menu .switch-theme{
+	  position: relative;
+	  width: 2rem;
+	  height: .9rem
+	}
+  .menu .switch-theme .switch-theme__check{
+		background-color: hsl(0deg, 0%, 10%);
+		background-color: var(--primary-color);
+		border-radius: .6rem;
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		cursor: pointer;
+		-webkit-transition: .5s;
+		transition: .5s
+	  }
+  .menu .switch-theme .switch-theme__check:before{
+		  content: "";
+		  width: 1rem;
+		  height: .9rem;
+		  background-color: hsl(174deg, 98%, 57%);
+		  background-color: var(--complementary-color);
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  border-radius: 50%;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+  .menu .switch-theme > input{
+		display: none
+	  }
+  .menu .switch-theme > input:checked + .switch-theme__check{
+		  background-color: hsl(0deg, 0%, 96%);
+		  background-color: var(--light)
+		}
+  .menu .switch-theme > input:checked + .switch-theme__check:before{
+			background-color: hsl(275deg, 77%, 49%);
+			background-color: var(--accent-color);
+			-webkit-transform: translateX(1rem);
+			        transform: translateX(1rem);
+		  }
 
 .menu-icon{
   position: fixed;
@@ -324,7 +373,46 @@ a{
   }
 
 
-
+/**
+ * ==============
+ *	Light Theme
+ * ==============
+ * */
+.light{
+  background-color: #FFF;
+  background-color: var(--white);
+  color: hsl(0deg, 0%, 20%);
+  color: var(--secondary-color)
+}
+.light .menu{
+	  background-color: hsl(0deg, 0%, 92%);
+	  background-color: var(--secondary-light);
+	  box-shadow: 2px 0px 3px 4px hsl(0, 0%, 70%);
+	  box-shadow: 2px 0px 3px 4px hsl(0, 0%, 70%)
+  }
+.light .menu .list__item a{
+		color: hsl(275deg, 77%, 49%);
+		color: var(--accent-color)
+	  }
+.light .menu .list__item a:hover {
+		  color: hsl(275, 77%, 40%);
+		  color: hsl(275, 77%, 40%);
+		}
+.light .menu .social__item a {
+		color: hsl(275deg, 77%, 49%);
+		color: var(--accent-color);
+	  }
+.light .biography a {
+	color: var(--acent-color);
+  }
+.light .resume > p > a {
+	color: hsl(275deg, 77%, 49%);
+	color: var(--accent-color); 
+  }
+.light .repos {
+	color: hsl(275deg, 77%, 49%);
+	color: var(--accent-color);
+  }
 
 /**
  * =========

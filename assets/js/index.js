@@ -1,5 +1,12 @@
 const $menuBurger = document.getElementById('burger-menu');
 const $menu = document.getElementById('menu');
+const $switch = document.getElementById('switch-theme');
+
+
+const switchTheme = () => {
+  document.getElementById('menu').classList.toggle('light');
+  document.querySelector('body').classList.toggle('light');
+}
 
 $menuBurger.addEventListener('click', () => $menu.classList.toggle('active'));
 
@@ -7,17 +14,21 @@ $menuBurger.addEventListener('click', () => $menu.classList.toggle('active'));
 window.addEventListener('resize', (e) => $menu.classList.remove('active'));
 
 
+// switch between color theme
+$switch.addEventListener('click', switchTheme)
+
 // Lazyload
-const lazy = (entries) => {
+const lazy = (entries, observer) => {
   entries.forEach(entry => {
-	console.log(entry.isIntersecting)
+	console.log(entry)
 	if(entry.isIntersecting){
 	  const url = entry.target.getAttribute('data-src');
 	  entry.target.setAttribute('src', url);
+	  observer.unobserve(entry.target);
 	}
   })
 }
 
-const observer = new IntersectionObserver(lazy, {rootMargin: '0px 0px 0px', threshold:1});
+const observer = new IntersectionObserver(lazy, {rootMargin: '20px 0px 0px 0px', threshold: 0});
 
-document.querySelectorAll('img[loading=lazy]').forEach(img => observer.observe(img));
+document.querySelectorAll('img[loading="lazy"]').forEach(img => observer.observe(img));

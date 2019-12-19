@@ -8,11 +8,13 @@
   --complementary-color: hsl(174deg, 98%, 57%);
 	  
   --white: #FFF;
+  --light: hsl(0deg, 0%, 96%);
+  --secondary-light: hsl(0deg, 0%, 92%);
   --blue: hsl(202deg, 84%, 36%);
   --red: hsl(350deg, 100%, 50%);
   --red-contrast: hsl(0deg, 100%, 31%);
 
-  --background-dark: var(--primary-color);`:w
+  --background-dark: var(--primary-color);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
@@ -36,6 +38,9 @@ body{
   margin: auto;
   position: relative;
 }
+
+
+
 
 h1,h2,h3{
   font-family: 'Montserrat';
@@ -122,6 +127,7 @@ a{
 	 /* ==> spread menu list & menu social networks  <==*/
 	justify-content: space-between;
 
+	
 	&.active{
 	  transform: translateX(0);
 	}
@@ -145,12 +151,53 @@ a{
 	& .list__item a {
 	  color: var(--complementary-color);
 	  &:hover{
-		color: var(--blue);
+		color: color-mod(var(--complementary-color) blackness(30%));
 	  }
 	}
 
 	& .social__container{
 	  width: 100%;
+	}
+
+	& .switch-theme{
+	  position: relative;
+	  width: 2rem;
+	  height: .9rem;
+
+	  & .switch-theme__check{
+		background-color: var(--primary-color);
+		border-radius: .6rem;
+		position: absolute;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		cursor: pointer;
+		transition: .5s;
+
+		&:before{
+		  content: "";
+		  width: 1rem;
+		  height: .9rem;
+		  background-color: var(--complementary-color);
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  border-radius: 50%;
+		  transition: .4s;
+		}
+	  }
+
+	  & > input{
+		display: none;
+		&:checked + .switch-theme__check{
+		  background-color: var(--light);
+		  &:before{
+			background-color: var(--accent-color);
+			transform: translateX(1rem);
+		  }
+		}
+	  }
 	}
   }
 
@@ -309,7 +356,43 @@ a{
 }
 
 
+/**
+ * ==============
+ *	Light Theme
+ * ==============
+ * */
+.light{
+  background-color: var(--white);
+  color: var(--secondary-color);
 
+  & .menu{
+	  background-color: var(--secondary-light);
+	  box-shadow: 2px 0px 3px 4px color-mod(var(--secondary-color) lightness(70%));
+
+	  & .list__item a{
+		color: var(--accent-color);
+		&:hover {
+		  color: color-mod(var(--accent-color) lightness(40%));
+		}
+	  }
+
+	  & .social__item a {
+		color: var(--accent-color);
+	  }
+  }
+
+  & .biography a {
+	color: var(--acent-color);
+  }
+
+  & .resume > p > a {
+	color: var(--accent-color); 
+  }
+
+  & .repos {
+	color: var(--accent-color);
+  }
+}
 
 /**
  * =========
