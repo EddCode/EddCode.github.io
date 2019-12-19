@@ -269,9 +269,11 @@ a{
   }
 .biography__container .photo-me{
 	width: 100%;
+	display:-webkit-box;
+	display:flex;
 	margin: .5em 0;
-	-webkit-clip-path: circle(30% at 45%);
-	        clip-path: circle(30% at 45%)
+	-webkit-clip-path: circle(39% at 50%);
+	        clip-path: circle(39% at 50%)
   }
 .biography__container .photo-me img{
 	  width: inherit;

@@ -254,8 +254,9 @@ a{
 
   & .photo-me{
 	width: 100%;
+	display:flex;
 	margin: .5em 0;
-	clip-path: circle(30% at 45%);
+	clip-path: circle(39% at 50%);
 	& img{
 	  width: inherit;
 	}
