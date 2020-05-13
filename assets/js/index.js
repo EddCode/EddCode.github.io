@@ -1,3 +1,5 @@
+import InitialTheme from './settings.js';
+
 const $menuBurger = document.getElementById('burger-menu');
 const $menu = document.getElementById('menu');
 const $switch = document.getElementById('switch-theme');
@@ -20,7 +22,6 @@ $switch.addEventListener('click', switchTheme)
 // Lazyload
 const lazy = (entries, observer) => {
   entries.forEach(entry => {
-	console.log(entry)
 	if(entry.isIntersecting){
 	  const url = entry.target.getAttribute('data-src');
 	  entry.target.setAttribute('src', url);
@@ -32,3 +33,6 @@ const lazy = (entries, observer) => {
 const observer = new IntersectionObserver(lazy, {rootMargin: '20px 0px 0px 0px', threshold: 0});
 
 document.querySelectorAll('img[loading="lazy"]').forEach(img => observer.observe(img));
+
+
+document.addEventListener("DOMContentLoaded", InitialTheme );
