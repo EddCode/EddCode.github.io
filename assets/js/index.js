@@ -1,4 +1,5 @@
 import InitialTheme from './settings.js';
+import { isSafari } from './settings.js';
 
 const $menuBurger = document.getElementById('burger-menu');
 const $menu = document.getElementById('menu');
@@ -23,7 +24,8 @@ $switch.addEventListener('click', switchTheme)
 const lazy = (entries, observer) => {
   entries.forEach(entry => {
 	if(entry.isIntersecting){
-	  const url = entry.target.getAttribute('data-src');
+	  let url = entry.target.getAttribute('data-src');
+	  url = isSafari ? url.replace('.webp', '.png') : url
 	  entry.target.setAttribute('src', url);
 	  observer.unobserve(entry.target);
 	}

@@ -255,7 +255,7 @@ a{
   & .photo-me{
 	width: 100%;
 	display:flex;
-	margin: .5em 0;
+	margin: 2em 0;
 	clip-path: circle(39% at 50%);
 	& img{
 	  width: inherit;
@@ -265,6 +265,10 @@ a{
 
 .biography{
   margin: auto;
+
+  & p {
+	line-height: 1.5em;
+  }
 }
 
 
