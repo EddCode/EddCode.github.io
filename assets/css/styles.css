@@ -119,8 +119,8 @@ a{
 	top: 0;
 	bottom: 0;
 	width: 200px;
-	box-shadow: 2px 0 3px 4px color-mod(var(--white) shade(40%));
 	background-color: var(--secondary-color);
+	box-shadow: 2px 0 3px 4px color-mod(var(--white) shade(40%));
 	transform: translateX(-450px);
 	transition:  .5s;
 	z-index: 1;
@@ -406,12 +406,18 @@ a{
  * */
 @media only screen and (width > 768px) {
   .menu{
-	transform: translateX(-232px);
+		transform: translateX(-232px);
   }
 
   .menu-icon{
-	display: none;
+		display: none;
   }
+
+	.mobile-container{
+		max-height: 100vh;
+		overflow-y: scroll;
+		box-shadow: 2px 0 3px 4px color-mod(var(--white) shade(40%));
+	}
 }
 
 @media only screen and (width >  767px) and (width < 769px){

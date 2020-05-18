@@ -9,6 +9,7 @@ const $switch = document.getElementById('switch-theme');
 const switchTheme = () => {
   document.getElementById('menu').classList.toggle('light');
   document.querySelector('body').classList.toggle('light');
+	document.querySelector('.mobile-container').classLsit.toggle('light');
 }
 
 $menuBurger.addEventListener('click', () => $menu.classList.toggle('active'));
