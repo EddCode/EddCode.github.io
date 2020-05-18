@@ -1,4 +1,4 @@
-# EddCode.github.io
+# My own landing page [edgarfig.com.mx](http://edgarfig.com.mx)
 I try to describe myself int this landigng page
 
 *[edgarfig.com.mx](http://edgarfig.com.mx)*
