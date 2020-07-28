@@ -1,45 +1,32 @@
-function switchColorSchema(e) {
-  if(e.matches){
-    document.getElementById('menu').classList.remove('light');
-	document.querySelector('body').classList.remove('light');
-	document.querySelector('#switch-theme').checked = false
-  }else{
-	document.getElementById('menu').classList.add('light');
-	document.querySelector('body').classList.add('light');
-	document.querySelector('#switch-theme').checked = true;
+const setColorSchema = (evt) => {
+  if (evt.matches) {
+    document.getElementById("menu").classList.remove("light");
+    document.querySelector("body").classList.remove("light");
+    document.querySelector("#switch-theme").checked = false;
+    setImageMode({ isDark: true });
+  } else {
+    document.getElementById("menu").classList.add("light");
+    document.querySelector("body").classList.add("light");
+    document.querySelector("#switch-theme").checked = true;
+    setImageMode({ isDark: false });
   }
+};
 
-}
+export const setImageMode = ({ isDark = false } = {}) => {
+  const $manComputing = document.getElementById("wrapper-img");
+  let url = $manComputing.getAttribute("data-src");
+  url = !isDark ? url.replace("code", "code-light") : url;
+  $manComputing.setAttribute("src", url);
+};
 
-const setColorSchema = (matches) => {
-  if(matches){
-    document.getElementById('menu').classList.remove('light');
-	document.querySelector('body').classList.remove('light');
-	document.querySelector('#switch-theme').checked = false;
-  }else{
-	document.getElementById('menu').classList.add('light');
-	document.querySelector('body').classList.add('light');
-	document.querySelector('#switch-theme').checked = true;
-  }
+const initColorSchema = () => {
+  const userPrefersDark =
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  const colorSchema = window.matchMedia("(prefers-color-scheme: dark)");
 
-}
-
-const setImageExt = () => {
-  const $manComputing = document.getElementById('wrapper-img');
-  let url = $manComputing.getAttribute('data-src');
-  url = isSafari ? url.replace('.webp', '.png') : url;
-  $manComputing.setAttribute('src', url);
-}
-
-const initColorSchema =  () => {
-  const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const colorSchema = window.matchMedia('(prefers-color-scheme: dark)');
-
-  setImageExt();
-
-  setColorSchema(userPrefersDark)
-  colorSchema.addListener(switchColorSchema)
-}
+  setColorSchema(userPrefersDark);
+  colorSchema.addListener(setColorSchema);
+};
 
 export default initColorSchema;
-export const isSafari =  navigator.userAgent.indexOf("Safari") != -1
+export const isSafari = navigator.userAgent.indexOf("Safari") != -1;

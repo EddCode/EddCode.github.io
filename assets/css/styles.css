@@ -316,7 +316,7 @@ a{
 	&:before{
 	  content: '✔︎';
 	  margin-right: .3rem;
-	  color: var(--accent-color);
+	  color: var(--complementary-color);
 	}
   }
 }
@@ -341,8 +341,8 @@ a{
   & .footer__title{
 	font-family: 'Oswald Stencil';
 	font-size: 2em;
-	color: var(--accent-color);
-	text-shadow: 0 0 2px var(--complementary-color);
+	color: var(--complementary-color);
+	text-shadow: -4px 3px 6px var(--accent-color);
   }
 
   & .contact{
@@ -386,16 +386,14 @@ a{
 	  }
   }
 
-  & .biography a {
-	color: var(--acent-color);
-  }
-
-  & .resume > p > a {
-	color: var(--accent-color); 
-  }
-
-  & .repos {
+  & .biography a, & li:before, & .resume a,
+  & .list-skills:before{
 	color: var(--accent-color);
+  }
+
+  & .footer__title {
+	color: var(--accent-color);
+	text-shadow: -1px 0px 2px #000;
   }
 }
 

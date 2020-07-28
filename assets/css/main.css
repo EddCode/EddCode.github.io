@@ -313,8 +313,8 @@ a{
 .skill-col .list-skills:before{
 	  content: '✔︎';
 	  margin-right: .3rem;
-	  color: hsl(275deg, 77%, 49%);
-	  color: var(--accent-color);
+	  color: hsl(174deg, 98%, 57%);
+	  color: var(--complementary-color);
 	}
 
 .experience-container{
@@ -338,10 +338,10 @@ a{
 .footer .footer__title{
 	font-family: 'Oswald Stencil';
 	font-size: 2em;
-	color: hsl(275deg, 77%, 49%);
-	color: var(--accent-color);
-	text-shadow: 0 0 2px hsl(174deg, 98%, 57%);
-	text-shadow: 0 0 2px var(--complementary-color);
+	color: hsl(174deg, 98%, 57%);
+	color: var(--complementary-color);
+	text-shadow: -4px 3px 6px hsl(275deg, 77%, 49%);
+	text-shadow: -4px 3px 6px var(--accent-color);
   }
 .footer .contact{
 	font-family: 'Montserrat thin';
@@ -388,16 +388,14 @@ a{
 		color: hsl(275deg, 77%, 49%);
 		color: var(--accent-color);
 	  }
-.light .biography a {
-	color: var(--acent-color);
-  }
-.light .resume > p > a {
-	color: hsl(275deg, 77%, 49%);
-	color: var(--accent-color); 
-  }
-.light .repos {
+.light .biography a, .light li:before, .light .resume a, .light .list-skills:before{
 	color: hsl(275deg, 77%, 49%);
 	color: var(--accent-color);
+  }
+.light .footer__title {
+	color: hsl(275deg, 77%, 49%);
+	color: var(--accent-color);
+	text-shadow: -1px 0px 2px #000;
   }
 
 /**
