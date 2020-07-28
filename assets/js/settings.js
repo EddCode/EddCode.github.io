@@ -14,9 +14,15 @@ const setColorSchema = (evt) => {
 
 export const setImageMode = ({ isDark = false } = {}) => {
   const $manComputing = document.getElementById("wrapper-img");
+  const $editor = document.getElementById("wrapper-img-github");
   let url = $manComputing.getAttribute("data-src");
+  let urlGithub = $editor.getAttribute("data-src");
   url = !isDark ? url.replace("code", "code-light") : url;
+  urlGithub = !isDark
+    ? urlGithub.replace("hacker_mindset", "hacker_mindset_ligth")
+    : urlGithub;
   $manComputing.setAttribute("src", url);
+  $editor.setAttribute("src", urlGithub);
 };
 
 const initColorSchema = () => {

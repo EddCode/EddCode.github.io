@@ -290,7 +290,8 @@ a{
   font-size: 1.5em;
 }
 
-.github{
+.github + figure > img{
+  width:  100%;
 }
 
 .color-gradient{

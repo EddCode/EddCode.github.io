@@ -27,7 +27,9 @@ const lazy = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       let url = entry.target.getAttribute("data-src");
-      url = isSafari ? url.replace(".webp", ".png") : url;
+      if (url.split(".")[1] !== "svg") {
+        url = isSafari ? url.replace(".webp", ".png") : url;
+      }
       entry.target.setAttribute("src", url);
       observer.unobserve(entry.target);
     }
