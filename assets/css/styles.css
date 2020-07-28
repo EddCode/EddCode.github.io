@@ -325,7 +325,8 @@ a{
       justify-self: center;
 
       & .skills{
-       text-align: center;
+        margin: .8em 0;
+        text-align: center;
       }
     }
   }
