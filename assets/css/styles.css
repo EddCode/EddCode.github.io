@@ -46,6 +46,10 @@ h1,h2,h3{
   font-family: 'Montserrat';
 }
 
+.grid {
+  display: grid;
+}
+
 .flex{
   display: flex;
 
@@ -305,6 +309,29 @@ a{
   background: linear-gradient(to left, var(--accent-color), var(--complementary-color));
 }
 
+.skill-container{
+  & .skill-col {
+    grid-template-columns: repeat(2, 1fr) ;
+  }
+  & .skill-col:first-child {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & .skill-col {
+    gap: .4em;
+
+    & div {
+      align-self: stretch;
+      justify-self: center;
+
+      & .skills{
+       text-align: center;
+      }
+    }
+  }
+
+}
+
 .skill-col{
   & .title--skills.skills{
 	font-family: Acme;
@@ -323,6 +350,8 @@ a{
 }
 
 .experience-container{
+  grid-column-start: 1;
+  grid-column-end: span 2;
   width: 200%;
   text-align: center;
   & .title--skills{
@@ -403,6 +432,12 @@ a{
  *	@media for device grater than ipad
  *	allocate nav and burger menu.
  * */
+@media only screen and (width < 400px){
+  .skill-container .skill-col:first-child{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media only screen and (width > 768px) {
   .menu{
 		transform: translateX(-232px);
