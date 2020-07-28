@@ -5,4 +5,4 @@ I try to describe myself int this landigng page
 
 > Mobile only
 
-![Edgar Figueroa](https://repository-images.githubusercontent.com/190657285/6cf55d00-9870-11ea-8a50-1cb07dae8bab)
+![Edgar Figueroa](https://repository-images.githubusercontent.com/190657285/9a1e7280-d04c-11ea-8e96-c5bc63f27e9a)
