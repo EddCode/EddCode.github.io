@@ -35,14 +35,13 @@ body{
   color: var(--white);
   background-color: hsl(0deg, 0%, 10%);
   background-color: var(--background-dark);
-  /** === Max whidth monile only  ===*/
-  max-width: 450px;
-  margin: auto;
-  position: relative;
 }
 
-
-
+.wrapper{
+  /** === Max whidth monile only  ===*/
+  width: 90%;
+  margin: auto;
+}
 
 h1,h2,h3{
   font-family: 'Montserrat';
@@ -53,6 +52,7 @@ h1,h2,h3{
 }
 
 .flex{
+  display: -webkit-box;
   display: flex
 }
 
@@ -61,15 +61,19 @@ h1,h2,h3{
   }
 
 .flex.column{
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	        flex-direction: column;
   }
 
 .flex.main-axis.center{
-	  justify-content: center;
+	  -webkit-box-pack: center;
+	          justify-content: center;
 	}
 
 .flex.main-axis.end{
-	  justify-content: flex-end;
+	  -webkit-box-pack: end;
+	          justify-content: flex-end;
 	}
 
 .flex.main-axis.around:{
@@ -77,23 +81,28 @@ h1,h2,h3{
 	}
 
 .flex.main-axis.evenly{
-	  justify-content: space-evenly;
+	  -webkit-box-pack: space-evenly;
+	          justify-content: space-evenly;
 	}
 
 .flex.main-axis.between{
-	  justify-content: space-between;
+	  -webkit-box-pack: justify;
+	          justify-content: space-between;
 	}
 
 .flex.cross-axis.center{
-	  align-items: center;
+	  -webkit-box-align: center;
+	          align-items: center;
 	}
 
 .flex.cross-axis.end{
-	  align-items: flex-end;
+	  -webkit-box-align: end;
+	          align-items: flex-end;
 	}
 
 .flex.cross-axis.strech{
-	  align-items: stretch;
+	  -webkit-box-align: stretch;
+	          align-items: stretch;
 	}
 
 .unstyle-list{
@@ -130,14 +139,21 @@ a{
 	background-color: var(--secondary-color);
 	box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
 	box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
-	transform: translateX(-450px);
+	-webkit-transform: translateX(-450px);
+	        transform: translateX(-450px);
+	-webkit-transition:  .5s;
 	transition:  .5s;
 	z-index: 1;
 	 /* ==> spread menu list & menu social networks  <==*/
-	justify-content: space-between
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-direction: column;
+	-webkit-box-pack: justify;
+	        justify-content: space-between
   }
   .menu.active{
-	  transform: translateX(0);
+	  -webkit-transform: translateX(0);
+	          transform: translateX(0);
 	}
   .menu .menu__list{
 	  padding: 0 1em;
@@ -178,6 +194,7 @@ a{
 		right: 0;
 		bottom: 0;
 		cursor: pointer;
+		-webkit-transition: .5s;
 		transition: .5s
 	  }
   .menu .switch-theme .switch-theme__check:before{
@@ -190,6 +207,7 @@ a{
 		  left: 0;
 		  bottom: 0;
 		  border-radius: 50%;
+		  -webkit-transition: .4s;
 		  transition: .4s;
 		}
   .menu .switch-theme > input{
@@ -202,10 +220,12 @@ a{
   .menu .switch-theme > input:checked + .switch-theme__check:before{
 			background-color: hsl(275deg, 77%, 49%);
 			background-color: var(--accent-color);
-			transform: translateX(1rem);
+			-webkit-transform: translateX(1rem);
+			        transform: translateX(1rem);
 		  }
 
 .menu-icon{
+  display: block;
   position: fixed;
   top: 1em;
   left: .8em;
@@ -256,6 +276,7 @@ a{
   }
 .biography__container .photo-me{
 	width: 100%;
+	display:-webkit-box;
 	display:flex;
 	margin: 2em 0;
 	-webkit-clip-path: circle(39% at 50%);
@@ -301,8 +322,12 @@ a{
 .color-gradient{
   border: none;
   height: 1px;
+  width: 100%;
+  background: -webkit-gradient(linear, right top, left top, from(hsl(275deg, 77%, 49%)), to(hsl(174deg, 98%, 57%)));
   background: linear-gradient(to left, hsl(275deg, 77%, 49%), hsl(174deg, 98%, 57%));
+  background: -webkit-gradient(linear, right top, left top, from(var(--accent-color)), to(var(--complementary-color)));
   background: linear-gradient(to left, var(--accent-color), var(--complementary-color));
+  grid-column: span 2 ;
 }
 
 .skill-container .skill-col {
@@ -439,25 +464,129 @@ a{
   }
 }
 
-@media only screen and (min-width: 769px) {
-  .menu{
-		transform: translateX(-232px);
-  }
-
+@media only screen and (min-device-width: 769px) {
+ 
   .menu-icon{
-		display: none;
+    display: none;
   }
 
-	.mobile-container{
-		max-height: 100vh;
-		overflow-y: scroll;
-		box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
-		box-shadow: 2px 0 3px 4px rgb(153, 153, 153);
-	}
+  .menu{
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+    position: relative;
+    width: 98%;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    box-shadow: none
+  }
+    .menu .menu__list, .menu .social-container{
+      display: -webkit-box;
+      display: flex;
+      margin: 0;
+      -webkit-box-align: center;
+              align-items: center
+    }
+      .menu .menu__list li, .menu .menu__list label, .menu .social-container li, .menu .social-container label {
+        margin: 0 .5rem;
+      }
+
+    .menu .social-container a:hover {
+      -webkit-animation: rotate .7s ease-in-out;
+              animation: rotate .7s ease-in-out;
+    }
+  
+  /**
+  * ==========
+  *	Header
+  * ===========
+  * */
+  .wrapper__container{
+    display:  grid;
+    margin-top: 1.5em;
+    grid-gap: 5em;
+    gap: 5em;
+    grid-template-columns: .5fr 1fr
+  }
+
+    .wrapper__container .title-description{
+      align-self: center;
+    }
+
+  /**
+   * ============
+   *  Biography
+   * ===========
+   * */
+  .biography-container{
+    display: -webkit-box;
+    display: flex
+  }
+    .biography-container .photo-me{
+      -webkit-box-ordinal-group: 0;
+              order: -1;
+    }
+
+  /**
+   * ========
+  *   Resume
+  * =========
+  * */
+  .resume__container--skills  {
+    display: grid;
+    grid-template-columns: 1fr 2fr
+  }
+
+    .resume__container--skills .title--skills {
+      margin: .5rem;
+      grid-column: span 1;
+    }
+
+    .resume__container--skills .abilities{
+      grid-column: 2 / span 1;
+      grid-row:  1 / span 2;
+      grid-template-columns: 1fr
+    }
+      .resume__container--skills .abilities .title--skills{
+        justify-self: center;
+      }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 768px){
-  .menu.active{
-	transform: translateX(-160px);
+  @-webkit-keyframes rotate {
+    to {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    10%{
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    15%{
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
   }
-}
+
+  @keyframes rotate {
+    to {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    10%{
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    15%{
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+  }
+
