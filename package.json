@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "browser-sync --start --server --files 'assets/**/*, index.html'",
     "build:css": "postcss assets/css/styles.css -o assets/css/main.css -w"
   },
   "repository": {

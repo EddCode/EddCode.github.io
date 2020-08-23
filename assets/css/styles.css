@@ -33,14 +33,13 @@ body{
   font-family: 'Lato', sans-serif;
   color: var(--white);
   background-color: var(--background-dark);
-  /** === Max whidth monile only  ===*/
-  max-width: 450px;
-  margin: auto;
-  position: relative;
 }
 
-
-
+.wrapper{
+  /** === Max whidth monile only  ===*/
+  width: 90%;
+  margin: auto;
+}
 
 h1,h2,h3{
   font-family: 'Montserrat';
@@ -129,6 +128,7 @@ a{
 	transition:  .5s;
 	z-index: 1;
 	 /* ==> spread menu list & menu social networks  <==*/
+        flex-direction: column;
 	justify-content: space-between;
 
 	
@@ -206,6 +206,7 @@ a{
   }
 
 .menu-icon{
+  display: block;
   position: fixed;
   top: 1em;
   left: .8em;
@@ -306,7 +307,9 @@ a{
 .color-gradient{
   border: none;
   height: 1px;
+  width: 100%;
   background: linear-gradient(to left, var(--accent-color), var(--complementary-color));
+  grid-column: span 2 ;
 }
 
 .skill-container{
@@ -439,24 +442,97 @@ a{
   }
 }
 
-@media only screen and (width > 768px) {
-  .menu{
-		transform: translateX(-232px);
-  }
-
+@media only screen and (device-width > 768px) {
+ 
   .menu-icon{
-		display: none;
+    display: none;
   }
 
-	.mobile-container{
-		max-height: 100vh;
-		overflow-y: scroll;
-		box-shadow: 2px 0 3px 4px color-mod(var(--white) shade(40%));
-	}
-}
+  .menu{
+    flex-direction: row;
+    position: relative;
+    width: 98%;
+    transform: translateX(0px);
+    box-shadow: none;
+    & .menu__list, & .social-container{
+      display: flex;
+      margin: 0;
+      align-items: center;
+      & li, & label {
+        margin: 0 .5rem;
+      }
+    }
 
-@media only screen and (width >  767px) and (width < 769px){
-  .menu.active{
-	transform: translateX(-160px);
+    & .social-container a:hover {
+      animation: rotate .7s ease-in-out;
+    }
+  }
+  
+  /**
+  * ==========
+  *	Header
+  * ===========
+  * */
+  .wrapper__container{
+    display:  grid;
+    margin-top: 1.5em;
+    gap: 5em;
+    grid-template-columns: .5fr 1fr;
+
+    & .title-description{
+      align-self: center;
+    }
+  }
+
+  /**
+   * ============
+   *  Biography
+   * ===========
+   * */
+  .biography-container{
+    display: flex;
+    & .photo-me{
+      order: -1;
+    }
+  }
+
+  /**
+   * ========
+  *   Resume
+  * =========
+  * */
+  .resume__container--skills  {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    & .title--skills {
+      margin: .5rem;
+      grid-column: span 1;
+    }
+
+    & .abilities{
+      grid-column: 2 / span 1;
+      grid-row:  1 / span 2;
+      grid-template-columns: 1fr;
+      & .title--skills{
+        justify-self: center;
+      }
+    }
   }
 }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(45deg);
+    }
+    10%{
+      transform: rotate(45deg);
+    }
+    15%{
+      transform: rotate(-45deg);
+    }
+    from {
+      transform: rotate(0deg);
+    }
+  }
+
