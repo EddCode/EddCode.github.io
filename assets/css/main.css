@@ -76,7 +76,7 @@ h1,h2,h3{
 	          justify-content: flex-end;
 	}
 
-.flex.main-axis.around:{
+.flex.main-axis.around{
 	  justify-content: space-around;
 	}
 
@@ -373,7 +373,6 @@ a{
 .experience-container{
   grid-column-start: 1;
   grid-column-end: span 2;
-  width: 200%;
   text-align: center
 }
 
@@ -484,6 +483,7 @@ a{
       display: -webkit-box;
       display: flex;
       margin: 0;
+      padding: 10px 0px;
       -webkit-box-align: center;
               align-items: center
     }
