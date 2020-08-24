@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EddCode/EddCode.github.io#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.12",
     "postcss-cli": "^7.1.1",
     "postcss-preset-env": "6.7.0"
   }
