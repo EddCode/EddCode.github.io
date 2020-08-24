@@ -450,8 +450,10 @@ a{
   .menu{
     flex-direction: row;
     position: relative;
-    width: 98%;
+    width: 100%;
+    padding: 1rem;
     transform: translateX(0px);
+    box-sizing: border-box;
     box-shadow: none;
     & .menu__list, & .social-container{
       display: flex;
@@ -493,6 +495,8 @@ a{
     display: flex;
     & .photo-me{
       order: -1;
+      margin-right: 2rem;
+      flex-basis: 1192px;
     }
   }
 

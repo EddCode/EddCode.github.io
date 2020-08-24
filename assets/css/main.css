@@ -474,9 +474,11 @@ a{
     -webkit-box-direction: normal;
             flex-direction: row;
     position: relative;
-    width: 98%;
+    width: 100%;
+    padding: 1rem;
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+    box-sizing: border-box;
     box-shadow: none
   }
     .menu .menu__list, .menu .social-container{
@@ -525,6 +527,8 @@ a{
     .biography-container .photo-me{
       -webkit-box-ordinal-group: 0;
               order: -1;
+      margin-right: 2rem;
+      flex-basis: 1192px;
     }
 
   /**
