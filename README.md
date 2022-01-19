@@ -1,7 +1,7 @@
-# My own landing page [edgarfig.com.mx](http://edgarfig.com.mx)
+# My own landing page [edgarfigueroa.info](http://edgarfigueroa.info)
 I try to describe myself int this landigng page
 
-*[edgarfig.com.mx](http://edgarfig.com.mx)*
+*[edgarfig.com.mx](http://edgarfigueroa.info)*
 
 > Mobile only
 
