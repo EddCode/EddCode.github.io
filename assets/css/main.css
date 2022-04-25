@@ -526,9 +526,10 @@ a{
   }
     .biography-container .photo-me{
       -webkit-box-ordinal-group: 0;
-              order: -1;
+      order: -1;
       margin-right: 2rem;
       flex-basis: 1192px;
+      align-self: center;
     }
 
   /**
