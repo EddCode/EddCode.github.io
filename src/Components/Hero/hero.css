@@ -1,0 +1,22 @@
+.section-hero {
+  height: 100vh;
+  padding: 90px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title {
+  color: var(--white);
+  margin: 0;
+  font-size: 4rem;
+}
+
+.hero-text-span {
+  color: var(--gray-text);
+}
+
+.hero-canvas {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
