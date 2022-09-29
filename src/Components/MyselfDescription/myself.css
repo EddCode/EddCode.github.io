@@ -1,3 +1,9 @@
+.description-container {
+  display: flex;
+  gap: 1.4rem;
+  position: relative;
+}
+
 .title {
   font-family: "font-file-82132", sans-serif;
   color: #08fdd8;
@@ -7,4 +13,102 @@
   margin-bottom: 40px;
   font-size: 3.3rem;
   line-height: 6.7rem;
+}
+
+.description-text {
+  width: 40%;
+}
+
+.description {
+  color: var(--white);
+  padding-left: 1rem;
+}
+
+.description::before {
+  content: "<p>";
+}
+
+.description::after {
+  content: "</p>";
+}
+
+.description::after,
+.description::before {
+  display: block;
+  font-size: 0.7rem;
+  color: #515152;
+  font-style: italic;
+  position: relative;
+  left: -1rem;
+}
+
+.description a {
+  color: var(--accent-color);
+}
+
+.tools {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(2, 50%);
+  grid-gap: 1rem;
+  position: relative;
+  top: -2rem;
+}
+
+.description-card {
+  background-color: #2a2a2a;
+  border-top: 1px solid;
+  color: var(--white);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.description-card h4 {
+  font-size: 2.4rem;
+  line-height: 1.7rem;
+}
+
+.description-card ul {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3rem;
+}
+
+.css {
+  color: #264de4;
+}
+
+.js {
+  color: #fddc00;
+}
+
+.reactjs {
+  color: #61dafb;
+}
+
+.nodejs {
+  color: #016e01;
+}
+
+.typescript {
+  color: #235a97;
+}
+
+.fastify,
+.styled-components,
+.mysql,
+.express,
+.postgres {
+  color: #ababab;
+}
+
+.git {
+  color: #f54e27;
+}
+
+.docker {
+  color: #0d57b2;
+}
+
+.jest {
+  color: #c3a813;
 }

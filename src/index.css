@@ -25,6 +25,7 @@ ul,
 li {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 h1 {
@@ -51,4 +52,26 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.flex {
+  display: flex;
+}
+
+.tags::before {
+  content: "<p>";
+}
+
+.tags::after {
+  content: "</p>";
+}
+
+.tags::after,
+.tags::before {
+  display: block;
+  font-size: 0.7rem;
+  color: #515152;
+  font-style: italic;
+  position: relative;
+  left: -1rem;
 }

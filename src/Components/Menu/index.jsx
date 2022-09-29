@@ -12,16 +12,19 @@ const Menu = () => {
         </figure>
         <div className='menu-list'>
           <a href=''>About</a>
-          <a href=''>My skills</a>
           <a href=''>Work</a>
           <a href=''>Blog</a>
         </div>
         <ul className='social-networks'>
           <li>
-            <FontAwesomeIcon icon={faGithub} color='' className='social-icons' />
+            <a href='https://github.com/EddCode' target='_new'>
+              <FontAwesomeIcon icon={faGithub} color='' className='social-icons' />
+            </a>
           </li>
           <li>
-            <FontAwesomeIcon icon={faLinkedinIn} color='#909096' className='social-icons' />
+            <a href='https://www.linkedin.com/in/edgar-figueroa-gtz/' target='_new'>
+              <FontAwesomeIcon icon={faLinkedinIn} color='#909096' className='social-icons' />
+            </a>
           </li>
         </ul>
       </div>

@@ -13,6 +13,7 @@
 
 .hero-text-span {
   color: var(--gray-text);
+  font-style: italic;
 }
 
 .hero-canvas {
