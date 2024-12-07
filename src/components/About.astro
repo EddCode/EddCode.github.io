@@ -1,6 +1,9 @@
+---
+import SecctionTitles from "./SecctionTitles.astro";
+---
+
 <section>
-    <h3>About Me</h3>
-    <p>Passionate Web Developer Commited To Creating Innovative And Efficient Sollutions</p>
+    <SecctionTitles title="About Me" description="Passionate Web Developer Commited To Creating Innovative And Efficient Sollutions" />
 
     <div>
         <figure>
@@ -32,16 +35,7 @@
         align-items: center;
     }
 
-    h3 {
-        color: var(--accent);
-        font-size: 2rem;
-
-       & + p {
-            margin: 1rem 0;
-            color: var(--sub-text);
-        } 
-    }
-
+     
     section > div {
         display: flex;
         justify-content: space-between;

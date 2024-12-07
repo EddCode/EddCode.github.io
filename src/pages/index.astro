@@ -3,10 +3,14 @@ import { fade } from 'astro:transitions';
 
 import About from "../components/About.astro";
 import Layout from "../layouts/Layout.astro";
+import Skills from '../components/Skills.astro';
+import Expirence from '../components/Expirence.astro';
 ---
 
 <Layout>
 	<main transition:animate={fade({ duration: '0.4s' })}>
 		<About id="about"/>
+		<Skills id="skills"/>
+		<Expirence id="experience"/>
 	</main>
 </Layout>

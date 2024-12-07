@@ -45,6 +45,12 @@ body {
 	color: var(--text);
 }
 
+h3 {
+	color: var(--accent);
+	font-size: 4rem;
+	font-weight: 500;
+}
+
 ul {
 	display: flex;
 	list-style: none;
