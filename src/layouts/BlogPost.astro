@@ -1,4 +1,6 @@
 ---
+import { fade } from 'astro:transitions';
+
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Navbar from '../components/Navbar.astro';
@@ -53,7 +55,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Navbar />
-		<main>
+		<main transition:animate={fade({ duration: '0.4s' })}>
 			<article>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
