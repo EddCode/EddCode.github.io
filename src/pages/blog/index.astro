@@ -1,19 +1,54 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { fade } from 'astro:transitions';
 import { getCollection } from 'astro:content';
+
+import BlogLayout from '../../layouts/BlogLayout.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+<BlogLayout>
+	<section transition:animate={fade({ duration: '0.4s'})}>
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
+						<a href={`/blog/${post.id}/`}>
+							<img  src={post.data.heroImage} alt="" />
+							<h4 class="title">{post.data.title}</h4>
+							<p class="date">
+								{ post.data.pubDate}
+							</p>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</BlogLayout>
+
+<style>
+	body {
+		width: 90%;
+		margin: auto;
+	}
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(clamp(5rem, 330vw, 25rem), 1fr));
+		grid-auto-flow: row dense;
+		gap: .7rem;
+
+		a {
+			display: block;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+</style>
