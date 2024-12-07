@@ -1,8 +1,11 @@
+---
+---
+
 <nav class="shadow">
     <h2>EDGAR FIGUEROA</h2>
     <ul>
         <li>
-            <a href="#home">Home</a>
+            <a href="#home" class="is-active">Home</a>
         </li>
         <li>
             <a href="#about">About me</a>
@@ -24,9 +27,9 @@
 
 <style>
     nav {
-        width: calc(100% - 2em);
-        margin: 2em auto;
-        padding: .3em 2em;
+        width: calc(100% - 1em);
+        margin: 3em auto;
+        padding: 1.2em 2em;
         position: relative;
     
         display: flex;
@@ -36,7 +39,6 @@
         border-radius: 3rem;
         box-shadow: 0 17px 23px -3px rgba(128, 0, 128, 0.3);
         border-top: 1px solid var(--primary);
-        z-index: -2;
     }
 
     h2 {
@@ -46,11 +48,28 @@
     }
 
     li {
-        color: var(--text-accent);
-
         &:hover {
             color: var(--text);
             cursor: pointer;
         }
+
+        a.is-active {
+            color: var(--primary);
+            transition: color ease-out 0.3s;
+        }
     }
 </style>
+
+<script>
+    document.querySelectorAll('nav ul li a')
+        .forEach((link) => link.addEventListener('click', callbackClick));
+
+    function callbackClick(evt: Event): void {
+        const target = evt.target as HTMLAnchorElement
+
+        document.querySelectorAll('nav ul li a')
+            .forEach((link) => link.classList.remove('is-active'))
+
+        target.classList.add('is-active');
+    }
+</script>

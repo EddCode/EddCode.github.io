@@ -1,0 +1,79 @@
+<section>
+    <h3>About Me</h3>
+    <p>Passionate Web Developer Commited To Creating Innovative And Efficient Sollutions</p>
+
+    <div>
+        <figure>
+            <img src="" alt="photo of Edgar">
+        </figure>
+        <div class="description">
+            <p>
+                Hi, I'm <span>Edgar</span>, a web developer. I started my career in 2018 as a
+                professional developer. Through teh expperience I have gained releasing 
+                several applications, I've designed app architectures and database
+                schemas while keeping the deployment of optimal features at the
+                center of what I do. I am passionate about creating applications that 
+                help automate and/or facilitate tasks. I'm excited to face new 
+                challenges, even with tools that I am not familiar with, so that I can 
+                expand my stack of tools for future challenges in order to decide what 
+                would be the best technology to solve any given, specific problem.
+            </p>
+            <p>Currently, I work at Altimetrik Mexico as a Software Engineer</p>
+
+            <button>Download CV</button>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h3 {
+        color: var(--accent);
+        font-size: 2rem;
+
+       & + p {
+            margin: 1rem 0;
+            color: var(--sub-text);
+        } 
+    }
+
+    section > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    figure {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .description {
+        width: 45%;
+        margin-lft: 2rem;
+        text-align: justify;
+        line-height: 1.5em;
+    }
+    
+    .description p:last-of-type {
+        margin: 2rem 0;
+    }
+
+    span {
+        font-weight: bold;
+    }
+</style>
