@@ -5,32 +5,104 @@ import Navbar from './Navbar.astro';
 <header>
     <Navbar />
 
-    <section>
+    <div>
         <div>
             <span>Hi I am</span>
             <h1>Edgar Figueroa</h1>
 
             <h2>Web Enginner</h2>
-            <ul>
-                <li>linkdin</li>
-                <li>github</li>
+            <ul class="social">
+                <li>L</li>
+                <li>G</li>
             </ul>
 
             <button>Contact me</button>
 
-            <div>
+            <div class="total-expirence">
                 <div>
-                    <span>6</span>
-                    <p>expirence</p>
+                    <span>6+</span>
+                    <p>Expiriences</p>
                 </div>
+                <hr>
                 <div>
-                    <span>6</span>
-                    <p>expirence</p>
+                    <span>6+</span>
+                    <p>Projects Done</p>
                 </div>
             </div>
         </div>
         <figure>
-            <img src="/images/edgar.png" alt="Edgar Figueroa" />
+            <img src="/images/edgar.png" alt="image hero" />
         </figure>
-    </section>
+    </div>
 </header>
+
+<style>
+
+    header > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    span {
+        color: var(--sub-text);
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 4em;
+        margin: .5em 0;
+        background: var(--text-gradient);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .social {
+        margin: 2rem 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 .5rem;
+            padding: 2px;
+            width: 2rem;
+            height: 2rem;
+
+            color: var(--sub-text);
+            border: 1px solid var(--sub-text);
+            border-radius: 100%;
+        }
+    } 
+
+    .total-expirence {
+        margin: 2rem 0;
+        padding: 1rem .8rem;
+
+        display: flex;
+        align-content: center;
+        gap: 2em;
+
+        border-radius: 8px;
+        background-color: var(--bg-box);
+        width: max-content;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            span {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: var(--accent);
+            }
+            p {
+                margin: .5em 0 0 0;
+                color: var(--text-accent);
+            }
+        }
+    }
+</style>

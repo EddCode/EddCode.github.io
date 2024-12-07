@@ -14,6 +14,9 @@
 	--text-accent: #FFFFFF;
 	--sub-text: #707070;
 	--text-card: #575757;
+
+
+	--text-gradient: linear-gradient(90deg, var(--primary) 0%, var(--accent) 35%);
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -28,6 +31,10 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
@@ -46,5 +53,31 @@ ul {
 
 	li {
 		margin: 0 1rem;
+	}
+}
+
+a {
+	color: var(--text);
+	text-decoration: none;
+	transition: color 0.2s;
+
+	&:hover {
+		color: var(--sub-text);
+		cursor: pointer;
+	}
+}
+
+button {
+	background: var(--primary);
+	color: var(--text-accent);
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: filter ease-in-out .3s;
+
+	&:hover {
+		background: var(--primary);
+		filter: contrast(1.5);
 	}
 }

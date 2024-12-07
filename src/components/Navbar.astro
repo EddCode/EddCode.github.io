@@ -1,19 +1,31 @@
 <nav class="shadow">
-    <h2>Edgar Figueroa</h2>
+    <h2>EDGAR FIGUEROA</h2>
     <ul>
-        <li>Home</li>
-        <li>About me</li>
-        <li>Skills</li>
-        <li>Work Expirience</li>
-        <li>Contact</li>
-        <li>Blog</li>
+        <li>
+            <a href="#home">Home</a>
+        </li>
+        <li>
+            <a href="#about">About me</a>
+        </li>
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+        <li>
+            <a href="#expirience">Work Expirience</a>
+        </li>
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+        <li>
+            <a href="/blog">Blog</a>
+        </li>
     </ul>
 </nav>
 
 <style>
     nav {
-        margin: 0 auto;
-        width: 70%;
+        width: calc(100% - 2em);
+        margin: 2em auto;
         padding: .3em 2em;
         position: relative;
     
@@ -21,19 +33,24 @@
         justify-content: space-between;
         align-items: center;
 
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         border-radius: 3rem;
+        box-shadow: 0 17px 23px -3px rgba(128, 0, 128, 0.3);
+        border-top: 1px solid var(--primary);
+        z-index: -2;
     }
 
-    .shadow::after {
-        content: "";
-        position: absolute;
-        inset: -.625em;
-        background: linear-gradient(from 90deg at 40% -25%, var(--primary), var(--accent));
-        filter: blur(2.5em);
+    h2 {
+        background:  linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     li {
         color: var(--text-accent);
+
+        &:hover {
+            color: var(--text);
+            cursor: pointer;
+        }
     }
 </style>
