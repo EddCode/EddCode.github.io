@@ -1,0 +1,39 @@
+<nav class="shadow">
+    <h2>Edgar Figueroa</h2>
+    <ul>
+        <li>Home</li>
+        <li>About me</li>
+        <li>Skills</li>
+        <li>Work Expirience</li>
+        <li>Contact</li>
+        <li>Blog</li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        margin: 0 auto;
+        width: 70%;
+        padding: .3em 2em;
+        position: relative;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        border-radius: 3rem;
+    }
+
+    .shadow::after {
+        content: "";
+        position: absolute;
+        inset: -.625em;
+        background: linear-gradient(from 90deg at 40% -25%, var(--primary), var(--accent));
+        filter: blur(2.5em);
+    }
+
+    li {
+        color: var(--text-accent);
+    }
+</style>

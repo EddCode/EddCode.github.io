@@ -11,7 +11,7 @@
 	--bg-card: #171717;
 	--bg-box: #181818;
 	--text: #959595;
-	--text-accent: #959595;
+	--text-accent: #FFFFFF;
 	--sub-text: #707070;
 	--text-card: #575757;
 }
@@ -36,4 +36,15 @@ body {
 	padding: 0;
 	background: var(--bg);
 	color: var(--text);
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		margin: 0 1rem;
+	}
 }
