@@ -11,8 +11,16 @@ const { title, description } = Astro.props satisfies Props;
 <p>{description}</p>
 
 <style>
+    h3, p {
+        text-align: center;
+    }
+
     h3  + p {
        margin: 1rem 0;
        color: var(--sub-text);
+    }
+
+    p {
+        font-size: 1.2em;
     }
 </style>

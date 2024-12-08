@@ -7,31 +7,69 @@ import SecctionTitles from "./SecctionTitles.astro";
 <section>
     <SecctionTitles title="Skills & tools" description="Profinces and Tools to Deliver Exelence" />
 
-    <div>
-        <div>
-            <img src="" alt="">
+    <div class="skills-card">
+        <div class="card">
+            <img src="" alt="Frontend icon">
             <h6>Frontend</h6>
             <p>lorem impsum dolor at .</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="card">
+            <img src="" alt="Backend Icon">
             <h6>Backend</h6>
             <p>lorem impsum dolor at .</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="card">
+            <img src="" alt="Database Icon">
             <h6>Database</h6>
             <p>lorem impsum dolor at .</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div class="card">
+            <img src="" alt="Frameworks icon">
             <h6>Frameworks & Libraries</h6>
             <p>lorem impsum dolor at .</p>
-        </div
-        <div>
-            <img src="" alt="">
+        </div>
+        <div class="card">
+            <img src="" alt="Oher Icons">
             <h6>Other skills</h6>
             <p>lorem impsumdolor at.</p>
         </div>
     </div>
 </section>
+
+
+<style>
+    section {
+        margin-top: 10em;
+    }
+
+    .skills-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin: 5em 0;
+    }
+
+    .card {
+        width: 30%;
+        min-width: 500px;
+        margin: 1em;
+        padding: 2em;
+        
+        display: flex;
+        flex-flow: nowrap column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 2em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: var(--bg-card);
+
+        h6 {
+            margin: 1em 0 1.5em 0;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: var(--text-accent);
+        }
+    }
+</style>

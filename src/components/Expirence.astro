@@ -7,11 +7,11 @@ import SecctionTitles from "./SecctionTitles.astro";
 
     <div class="tabs is-centered">
         <ul>
-          <li class="is-active"><a>Altimetrik</a></li>
-          <li><a>Outbuild</a></li>
-          <li><a>Neubox</a></li>
+          <li class="is-active"><span>Altimetrik</span> - Fullstack Engineer</li>
+          <li><span>Outbuild</span> -  Fullstack Engineer</li>
+          <li><span>Neubox</span> - Backend developer</li>
         </ul>
-        <div>
+        <div class="is-active">
             <p>description</p>
             <p>Key Responsabilities:</p>
             <ul>
@@ -40,3 +40,50 @@ import SecctionTitles from "./SecctionTitles.astro";
         </div>
     </div> 
 </section>
+
+<style>
+    section {
+        margin: 10em 0;
+    }
+
+    .tabs ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        margin: 5em 0;
+        
+        li {
+            margin: 0 1em;
+            font-size: 1.5em;
+            cursor: pointer;
+
+            span {
+                font-weight: 600;
+            }
+
+            &.is-active {
+                color: var(--primary);
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: .6px;
+                    border-radius: 1px;
+                    background: linear-gradient(90deg, var(--primary) 40%, var(--accent) 80%);;
+                    margin-top: 5px;
+                }
+            }
+        }
+
+    }
+
+    .tabs div {
+        display: none;
+
+        &.is-active {
+            text-align: center;
+            display: block;
+        }
+    }
+</style>

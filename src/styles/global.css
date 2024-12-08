@@ -45,6 +45,11 @@ body {
 	color: var(--text);
 }
 
+main {
+    width: 90%;
+    margin: auto;
+}
+
 h3 {
 	color: var(--accent);
 	font-size: 4rem;

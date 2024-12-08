@@ -1,0 +1,90 @@
+<footer>
+    <span>EDGAR FIGUEROA</span>
+
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">About Me</a></li>
+        <li><a href="">Skills</a></li>
+        <li><a href="">Expirence</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Blog</a></li>
+    </ul>
+
+    <ul class="social">
+        <li>L</li>
+        <li>G</li>
+    </ul>
+
+    <a href="mailto:recipient@example.com">edgar.figueroa.gtz@gmail.com</a>
+
+    <hr>
+
+    <p>Designed by <a href="https://danizavala.com">Daniel Zavala</a></p>
+</footer>
+
+<style>
+    footer {
+        padding: 3em 0 0 0;
+        background: var(--bg-box);
+
+        display: flex;
+        flex-flow: nowrap column;
+        align-items: center;
+
+        span {
+            font-size: 2.4em;
+            background:  linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ul {
+            justify-content: center;
+            gap: 1.7em;
+            transition: color ease-out 0.3s;
+
+            li {
+                margin: 0 2em;
+                font-weight: 300;
+                font-size: 1.4em;
+            }
+
+            :hover {
+                color: var(--text-accent);
+            }
+        }
+    }
+
+    .social {
+        margin: 2rem 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 .5rem;
+            padding: 2px;
+            width: 2rem;
+            height: 2rem;
+
+            color: var(--sub-text);
+            border: 1px solid var(--sub-text);
+            border-radius: 100%;
+        }
+    }
+
+    .social + a {
+        font-weight: 600;
+    }
+
+    hr {
+        width: 30%;
+        margin: 3em 0 1em 0;
+        border: 1px solid var(--sub-text);
+
+        & + p {
+            color: var(--sub-text);
+        }
+    }
+</style>
