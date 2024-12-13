@@ -12,10 +12,12 @@ enum MenuItem {
 
 export default function Navbar(prop: { url?: MenuItem }) {
     const [item, setItem] = useState<MenuItem>(prop.url || MenuItem.HOME);
+    console.log(prop.url, 'url prop');
 
     const handleClick = (evt: Event) => {
         const target = evt.currentTarget as HTMLElement;
         setItem(target.getAttribute('data-item') as MenuItem);
+        prop.url = target.getAttribute('data-item') as MenuItem;
     }
 
     return (
@@ -24,7 +26,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
             <ul>
                 <li className={style['nav-item']}>
                     <a 
-                        href="/"
+                        href="/#home"
                         data-item={MenuItem.HOME}
                         className={item == MenuItem.HOME ? style['is-active'] : ''}
                         onClick={handleClick}
@@ -60,16 +62,6 @@ export default function Navbar(prop: { url?: MenuItem }) {
                         onClick={handleClick}
                     >
                         Work Experience
-                    </a>
-                </li>
-                <li className={style['nav-item']}>
-                    <a 
-                        href="/#contact"
-                        data-item={MenuItem.CONTACT}
-                        className={item == MenuItem.CONTACT ? style['is-active'] : ''}
-                        onClick={handleClick}
-                    >
-                        Contact
                     </a>
                 </li>
                 <li className={style['nav-item']}>

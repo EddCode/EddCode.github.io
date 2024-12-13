@@ -3,6 +3,8 @@ import BaseHead from "../components/BaseHead.astro"
 import Navbar from "../components/Navbar/Navbar.tsx"
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
+
+let url = Astro.url
 ---
 
 <!doctype html>
@@ -12,7 +14,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
     </head>
     
     <body>
-		<Navbar client:visible transition:persist />
+		<Navbar client:visible transition:persist url={url} />
         <slot />
     </body>
 </html>
