@@ -1,6 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
 import Navbar from "../components/Navbar.astro"
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
@@ -13,10 +12,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
     </head>
     
     <body>
+		<Navbar />
         <slot />
     </body>
 </html>
-
-<style>
-    
-</style>
