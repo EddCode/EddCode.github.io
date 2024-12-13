@@ -3,39 +3,73 @@ import SecctionTitles from "./SecctionTitles.astro";
 ---
 
 <section>
-    <SecctionTitles title="Experience" description="A Brife Of My Professional Journey" />
+    <SecctionTitles title="Work Experience" description="Professional Experience and 'career Highlights" />
 
     <div class="tabs is-centered">
         <ul>
-          <li class="is-active"><span>Altimetrik</span> - Fullstack Engineer</li>
-          <li><span>Outbuild</span> -  Fullstack Engineer</li>
-          <li><span>Neubox</span> - Backend developer</li>
+            <li class="tab is-active"><span>Altimetrik</span> - Fullstack Engineer</li>
+            <li class="tab"><span>Outbuild</span> -  Fullstack Engineer</li>
+            <li class="tab"><span>Codigo MX</span> - Backend developer</li>
+            <hr class="line">
         </ul>
-        <div class="is-active">
-            <p>description</p>
+        <div class="is-active job-description">
+            <p >
+                Collaborated with cross-functional teams, including product management, engineering, and quality 
+                assurance, to ensure the microservice met all requirements and specifications. This allowed for 
+                efficient communication and collaboration, ensuring successful project outcomes.
+                Developed and maintained a microservice on the STATSIG platform, which allowed different teams
+                to check if certain users had access to a particular feature using feature flags. This service 
+                significantly improved the efficiency and accuracy of feature flagging, reducing errors and 
+                enhancing the user experience.
+            </p>
             <p>Key Responsabilities:</p>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                    <b>• Collaborating Across Teams</b>: 
+                    Partnered with product management, engineering, and QA to maintain and enhance feature flagging capabilities.
+                </li>
+                <li>
+                    <b>• Optimizing Accuracy</b>:
+                    Implemented a feature flagging system, reducing user access errors by 25%.
+                </li>
             </ul>
         </div>
-        <div>
-            <p>description</p>
+        <div class="job-description">
+            <p >
+                Managed the development of the weekly project planning module, which enabled users to plan their 
+                tasks more efficiently and reduce project delivery time. I also collaborated on a significant feature 
+                that preserved different forms of presentation of each user's complete project information, 
+                participating to multiple iterations and improvements.
+            </p>
             <p>Key Responsabilities:</p>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                    <b>• Planning Solutions</b>:  Developed a project planning module to improve task efficiency and organization.
+                </li>
+                <li>
+                    <b>• Driving Growth</b>: Contributed to a collaborative feature that secured Series B financing by 
+                    enhancing project presentations.
+                </li>
             </ul>
         </div>
-        <div>
-            <p>description</p>
+        <div class="job-description">
+            <p >
+                Collaborated on the development of an e-commerce platform that enabled customers to create 
+                personalized virtual shopping carts and complete purchases via text messages. This innovative feature
+                enhanced the customer experience and increased sales. 
+                Utilized the Twilio API (JavaScript) to send text messages to customers, ensuring timely and 
+                accurate communication throughout the purchasing process.
+            </p>
             <p>Key Responsabilities:</p>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>
+                    <b>• Innovating E-commerce</b>: Designed an e-commerce platform enabling personalized shopping 
+                    experiences and text-based purchases.
+                </li>
+                <li>
+                    <b>• Enhancing Engagement</b>: Boosted customer interaction by 30% through advanced platform 
+                    features.
+                </li>
             </ul>
         </div>
     </div> 
@@ -46,16 +80,20 @@ import SecctionTitles from "./SecctionTitles.astro";
         margin: 10em 0;
     }
 
-    .tabs ul {
-        display: flex;
+    .tabs {
+        width: 86%;
+        margin: auto;
+    }
+
+    .tabs > ul {
+        margin: 4em 0;
         justify-content: center;
-        list-style: none;
-        margin: 5em 0;
+        position: relative;
         
         li {
-            margin: 0 1em;
-            font-size: 1.5em;
             cursor: pointer;
+            text-align: center;
+            transition: all ease-in-out .5s;
 
             span {
                 font-weight: 600;
@@ -63,27 +101,87 @@ import SecctionTitles from "./SecctionTitles.astro";
 
             &.is-active {
                 color: var(--primary);
-
-                &::after {
-                    content: '';
-                    display: block;
-                    width: 100%;
-                    height: .6px;
-                    border-radius: 1px;
-                    background: linear-gradient(90deg, var(--primary) 40%, var(--accent) 80%);;
-                    margin-top: 5px;
-                }
             }
         }
-
     }
 
-    .tabs div {
+    .line {
+        position: absolute;
+        top: 2em;
+        height: .6px;
+        border: none;
+        background: linear-gradient(90deg, var(--primary) 40%, var(--accent) 80%);
+        transition: all .3s ease;
+    }
+
+    .job-description {
         display: none;
+        animation: moving .5s ease;
 
         &.is-active {
-            text-align: center;
             display: block;
+        }
+
+        p {
+            line-height: 1.8em;
+            margin: 2em 0;
+            text-align: center;
+        }
+
+        & p:last-of-type {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        ul {
+            display: block;
+            text-align: center;
+            line-height: 3em;
+        }
+    }
+
+    @keyframes moving {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 </style>
+
+<script>
+    const $tabs = document.querySelectorAll('.tab') as NodeListOf<HTMLElement>
+    const $jobs = document.querySelectorAll('.job-description') as NodeListOf<HTMLElement>
+    const $line = document.querySelector('.line') as HTMLElement
+
+    $line.style.width = $tabs[0].offsetWidth + 'px';
+    $line.style.left = $tabs[0].offsetLeft + 'px';
+
+    $tabs.forEach((tab, idx) => tab.addEventListener('click', (evt) => {
+        let target = evt.target as HTMLElement
+        callbackClick(tab, idx)
+
+        target.tagName !== 'LI' && (
+            target = target.parentElement as HTMLElement
+        )
+
+        $line.style.width = target.offsetWidth + 'px';
+        $line.style.left = target.offsetLeft + 'px';
+    }));
+
+    function callbackClick($tab: Element, idx: number): void {
+        $tabs.forEach((tab) => tab.classList.remove('is-active'))
+
+        $tab.classList.add('is-active');
+
+        $jobs[idx].classList.add('is-active');
+        $jobs.forEach(jobContent => {
+            if (jobContent !== $jobs[idx]) {
+                jobContent.classList.remove('is-active');
+            }
+        });
+    } 
+</script>
