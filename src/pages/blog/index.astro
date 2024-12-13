@@ -4,8 +4,17 @@ import { getCollection } from 'astro:content';
 
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
+interface POST {
+	id: string; 
+	data: { 
+		heroImage: string;
+		title: string; 
+		pubDate: Date;
+	}
+}
+
 const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+	(a: POST, b: POST) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
 ---
@@ -14,7 +23,7 @@ const posts = (await getCollection('blog')).sort(
 	<section transition:animate={fade({ duration: '0.4s'})}>
 		<ul>
 			{
-				posts.map((post) => (
+				posts.map((post: POST) => (
 					<li>
 						<a href={`/blog/${post.id}/`}>
 							<img  src={post.data.heroImage} alt="" />

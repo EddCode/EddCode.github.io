@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.1",
+    "@astrojs/preact": "^4.0.0",
     "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/starlight": "^0.29.2",
-    "astro": "^5.0.3"
+    "astro": "^5.0.3",
+    "preact": "^10.25.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",

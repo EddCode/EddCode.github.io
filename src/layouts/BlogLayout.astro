@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar/Navbar.tsx";
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
@@ -9,10 +9,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		
 	</head>
 	<body>
-		<Navbar />
+		<Navbar client:visible transition:persist url="blog"/>
 		<main>
             <slot />
 		</main>

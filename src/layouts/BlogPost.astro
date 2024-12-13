@@ -3,7 +3,7 @@ import { fade } from 'astro:transitions';
 
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
-import Navbar from '../components/Navbar.astro';
+import Navbar from '../components/Navbar/Navbar.tsx';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -53,7 +53,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	</head>
 
 	<body>
-		<Navbar />
+		<Navbar client:visible transition:persist url='blog' />
 		<main transition:animate={fade({ duration: '0.4s' })}>
 			<article>
 				<div class="hero-image">

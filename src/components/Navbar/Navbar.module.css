@@ -1,0 +1,35 @@
+.nav {
+    width: calc(90% - 1em);
+    margin: 3em auto;
+    padding: 1.2em 2em;
+    position: sticky;
+    top: 3em;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg);
+    border-radius: 3rem;
+    box-shadow: 0 17px 23px -3px rgba(128, 0, 128, 0.3);
+    border-top: 1px solid var(--primary);
+}
+
+.title {
+    background:  linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-item {
+    &:hover {
+        color: var(--text);
+        cursor: pointer;
+    }
+
+    a.is-active {
+        color: var(--primary);
+        transition: color ease-out 0.3s;
+    }
+}
