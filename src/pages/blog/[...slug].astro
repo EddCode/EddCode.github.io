@@ -19,3 +19,79 @@ const { Content } = await render(post);
 <BlogPost {...post.data}>
 	<Content />
 </BlogPost>
+
+<style is:inline>
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	main {
+		h3 strong, h4 strong {
+			color: var(--accent);
+		}
+		h1 {
+			display: block;
+			font-size: 2em;
+			margin-top: 0.67em;
+			margin-bottom: 0.67em;
+			margin-left: 0;
+			margin-right: 0;
+			font-weight: bold;
+		}
+
+		h2 {
+			display: block;
+			font-size: 1.5em;
+			margin-top: 0.83em;
+			margin-bottom: 0.83em;
+			margin-left: 0;
+			margin-right: 0;
+			font-weight: bold;
+		}
+
+		h3 {
+			display: block;
+			font-size: 1.17em;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			margin-left: 0;
+			margin-right: 0;
+			font-weight: bold;
+			color: var(--tex);
+		}
+
+		p {
+			display: block;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			margin-left: 0;
+			margin-right: 0;
+			line-height: 1.8rem;
+		}
+
+		ul {
+			display: block;
+			list-style-type: disc;
+			margin-top: 1em;
+			margin-bottom: 1em;
+
+			li {
+				margin: 1.5em 0;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+			transition: all 0.3s ease;
+
+			&:hover {
+				color: var(--primary);
+			}
+		}
+		
+		pre {
+			padding: 1.2rem;
+		}
+	}
+</style>

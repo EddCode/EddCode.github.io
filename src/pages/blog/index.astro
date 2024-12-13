@@ -5,12 +5,16 @@ import { getCollection } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
 interface POST {
-	id: string; 
-	data: { 
-		heroImage: string;
-		title: string; 
+	id: string;
+	body?: string;
+	collection: "blog";
+	data: {
+		title: string;
+		description: string;
 		pubDate: Date;
-	}
+		updatedDate?: Date;
+		heroImage?: string;
+	};
 }
 
 const posts = (await getCollection('blog')).sort(
@@ -29,7 +33,12 @@ const posts = (await getCollection('blog')).sort(
 							<img  src={post.data.heroImage} alt="" />
 							<h4 class="title">{post.data.title}</h4>
 							<p class="date">
-								{ post.data.pubDate}
+								{
+									new Intl.DateTimeFormat('es-MX', {
+										dateStyle: 'full',
+										timeZone: 'America/Mexico_City',
+									}).format(post.data.pubDate)
+								}
 							</p>
 						</a>
 					</li>
@@ -42,13 +51,24 @@ const posts = (await getCollection('blog')).sort(
 <style>
 	body {
 		margin: auto;
+		margin-bottom: 1em;
 	}
 
 	ul {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(clamp(5rem, 330vw, 25rem), 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(clamp(6rem, 430vw, 25rem), 1fr));
 		grid-auto-flow: row dense;
 		gap: .7rem;
+
+		li {
+			padding: .5em;
+			border-radius: 10px;
+			transition: all .3s ease;
+			&:hover {
+				box-shadow: 0 0 15px #00af9892;
+				transform: scale(1.05);
+			}
+		}
 
 		a {
 			display: block;
@@ -57,6 +77,22 @@ const posts = (await getCollection('blog')).sort(
 				width: 100%;
 				height: auto;
 			}
+
+			h4 {
+				margin: .5rem 0;
+				background: var(--text-gradient);
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+				
+			}
+
+			.date {
+				color: var(--sub-text);
+				font-size: .8em;
+			}
 		}
+
+		
 	}
 </style>

@@ -17,6 +17,7 @@
 
 
 	--text-gradient: linear-gradient(90deg, var(--primary) 0%, var(--accent) 35%);
+	--box-shadow: 0 0 10px 0 #959595c7;
 }
 
 * {
