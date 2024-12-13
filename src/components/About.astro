@@ -37,10 +37,17 @@ import SecctionTitles from "./SecctionTitles.astro";
 
      
     section > div {
+        width: 100%;
+        margin-top: 2rem;
+
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        margin-top: 2rem;
+
+        @media screen and (max-width: 920px) {
+            justify-content: center;
+        }
     }
 
     figure {
@@ -57,7 +64,7 @@ import SecctionTitles from "./SecctionTitles.astro";
     }
 
     .description {
-        width: 45%;
+        width: 40rem;
         margin-lft: 2rem;
         text-align: justify;
         line-height: 1.5em;

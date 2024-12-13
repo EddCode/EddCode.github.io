@@ -33,10 +33,18 @@
 <style>
 
     header > div {
+        margin: 4em 0;
+        width: 100%;
+
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        margin: 4em 0;
+
+        @media screen and (max-width: 920px) {
+            justify-content: center;
+            gap: 2em;
+        }
     }
     span {
         color: var(--sub-text);

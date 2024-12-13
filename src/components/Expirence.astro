@@ -112,6 +112,14 @@ import SecctionTitles from "./SecctionTitles.astro";
         border: none;
         background: linear-gradient(90deg, var(--primary) 40%, var(--accent) 80%);
         transition: all .3s ease;
+
+        @media screen and (max-width: 920px) {
+            top: 3em;
+        }
+
+        @media screen and (max-width: 600px) {
+            top: 4em;
+        }
     }
 
     .job-description {
