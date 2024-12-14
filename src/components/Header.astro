@@ -1,6 +1,6 @@
 <header id="home">
     <div>
-        <div>
+        <div class="header-content">
             <span>Hi I am</span>
             <h1>Edgar Figueroa</h1>
 
@@ -46,6 +46,16 @@
             gap: 2em;
         }
     }
+
+    .header-content {
+        @media screen and (max-width: 420px) {
+            display: flex;
+            flex-flow: wrap column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    }
     span {
         color: var(--sub-text);
     }
@@ -61,6 +71,10 @@
         background: var(--text-gradient);
         background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @media screen and (max-width: 420px) {
+           text-align: center; 
+        }
     }
 
     .social {
@@ -106,6 +120,10 @@
                 margin: .5em 0 0 0;
                 color: var(--text-accent);
             }
+        }
+
+        @media screen and (max-width: 420px) {
+            margin: 2rem auto;
         }
     }
 </style>

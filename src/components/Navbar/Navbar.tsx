@@ -23,6 +23,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
         <nav className={style.nav}>
             <div className={style['nav-content']}>
             <h2 className={style.title}>EDGAR FIGUEROA</h2>
+            <button className={style.burger}>burger menu</button>
             <ul>
                 <li className={style['nav-item']}>
                     <a 

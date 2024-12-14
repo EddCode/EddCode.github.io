@@ -56,6 +56,10 @@ import SecctionTitles from "./SecctionTitles.astro";
         width: 40%;
         border-radius: 50%;
         overflow: hidden;
+
+        @media screen and (max-width: 420px ){
+            width: 100%;
+        }
     }
 
     img {
@@ -68,6 +72,10 @@ import SecctionTitles from "./SecctionTitles.astro";
         min-width: 30rem;
         text-align: justify;
         line-height: 1.5em;
+
+        @media screen and (max-width: 420px ){
+            min-width: 20rem;
+        }
     }
     
     .description p:last-of-type {
