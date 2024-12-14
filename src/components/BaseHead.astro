@@ -1,6 +1,6 @@
 ---
-import { ClientRouter } from 'astro:transitions';
-import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions'
+import '../styles/global.css'
 
 interface Props {
 	title: string;
@@ -8,9 +8,9 @@ interface Props {
 	image?: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -44,3 +44,13 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
 <ClientRouter />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
+<script>
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date())
+
+  gtag('config', 'G-R7E8T7BF73')
+</script>
