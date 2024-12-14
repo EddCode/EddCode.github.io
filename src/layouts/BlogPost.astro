@@ -24,7 +24,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				display: block;
 				margin: 0 auto 1.5em auto;
 				border-radius: 12px;
-				width: 70%;
 			}
 			.prose {
 				width: 70%;
@@ -60,7 +59,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<main transition:animate={fade({ duration: '0.4s' })}>
 			<article>
 				<div class="hero-image">
-					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <img height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
 					<div class="title">
