@@ -25,7 +25,7 @@
             </div>
         </div>
         <figure>
-            <img src="/images/edgar.png" alt="image hero" />
+            <img src="/hero.png" alt="image hero" loading="lazy"/>
         </figure>
     </div>
 </header>
@@ -40,6 +40,15 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+
+        figure {
+            width: 50%;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
 
         @media screen and (max-width: 920px) {
             justify-content: center;

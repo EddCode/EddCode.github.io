@@ -23,7 +23,28 @@ export default function Navbar(prop: { url?: MenuItem }) {
         <nav className={style.nav}>
             <div className={style['nav-content']}>
             <h2 className={style.title}>EDGAR FIGUEROA</h2>
-            <button className={style.burger}>burger menu</button>
+            <ul className={style.burger}>
+                <li className={style['nav-item']}>
+                    <a 
+                        href="/#home"
+                        data-item={MenuItem.HOME}
+                        className={item == MenuItem.HOME ? style['is-active'] : ''}
+                        onClick={handleClick}
+                    >
+                        Home
+                    </a>
+                </li>
+                <li className={style['nav-item']}>
+                    <a 
+                        data-item={MenuItem.BLOG}
+                        href='/blog'
+                        className={item == MenuItem.BLOG ? style['is-active'] : ''}
+                        onClick={handleClick}
+                    >
+                        Blog
+                    </a>
+                </li>
+            </ul>
             <ul>
                 <li className={style['nav-item']}>
                     <a 

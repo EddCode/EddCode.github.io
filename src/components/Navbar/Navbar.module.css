@@ -43,17 +43,14 @@
         color: var(--primary);
         transition: color ease-out 0.3s;
     }
-
-    
-    
 }
 
 @media screen and (max-width: 840px){
     ul {
-            display: none;
+        display: none;
     }
 
     .burger {
-        display: inline-block;
+        display: flex;
     }
 }
