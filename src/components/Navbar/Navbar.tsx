@@ -45,7 +45,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
                     </a>
                 </li>
             </ul>
-            <ul>
+            <ul className={style.items}>
                 <li className={style['nav-item']}>
                     <a 
                         href="/#home"
