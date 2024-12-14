@@ -21,6 +21,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
 
     return (
         <nav className={style.nav}>
+            <div className={style['nav-content']}>
             <h2 className={style.title}>EDGAR FIGUEROA</h2>
             <ul>
                 <li className={style['nav-item']}>
@@ -74,6 +75,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
                     </a>
                 </li>
             </ul>
+                </div> 
         </nav>
     )
 }

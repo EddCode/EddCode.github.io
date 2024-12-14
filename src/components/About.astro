@@ -7,12 +7,12 @@ import SecctionTitles from "./SecctionTitles.astro";
 
     <div>
         <figure>
-            <img src="" alt="photo of Edgar">
+            <img src="/public/me.png" alt="photo of Edgar">
         </figure>
         <div class="description">
             <p>
                 Hi, I'm <span>Edgar</span>, a web developer. I started my career in 2018 as a
-                professional developer. Through teh expperience I have gained releasing 
+                professional developer. Through the expperience I have gained releasing 
                 several applications, I've designed app architectures and database
                 schemas while keeping the deployment of optimal features at the
                 center of what I do. I am passionate about creating applications that 
@@ -21,9 +21,10 @@ import SecctionTitles from "./SecctionTitles.astro";
                 expand my stack of tools for future challenges in order to decide what 
                 would be the best technology to solve any given, specific problem.
             </p>
-            <p>Currently, I work at Altimetrik Mexico as a Software Engineer</p>
 
-            <button>Download CV</button>
+            <a href="/resume/Edgar-Figueroa.pdf" download="Edgar-Figueroa">
+                <button>Download CV</button>
+            </a>
         </div>
     </div>
 </section>
@@ -47,25 +48,24 @@ import SecctionTitles from "./SecctionTitles.astro";
 
         @media screen and (max-width: 920px) {
             justify-content: center;
+            row-gap: 2em;
         }
     }
 
     figure {
-        width: 200px;
-        height: 200px;
+        width: 40%;
         border-radius: 50%;
         overflow: hidden;
     }
 
     img {
         width: 100%;
-        height: 100%;
         object-fit: cover;
     }
 
     .description {
-        width: 40rem;
-        margin-lft: 2rem;
+        width: 50%;
+        min-width: 30rem;
         text-align: justify;
         line-height: 1.5em;
     }

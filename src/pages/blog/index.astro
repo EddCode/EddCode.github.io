@@ -54,6 +54,10 @@ const posts = (await getCollection('blog')).sort(
 		margin-bottom: 1em;
 	}
 
+	img {
+		border-radius: .7rem;
+	}
+
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(clamp(6rem, 430vw, 25rem), 1fr));

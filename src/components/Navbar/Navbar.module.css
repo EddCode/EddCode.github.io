@@ -1,10 +1,17 @@
+
 .nav {
-    width: calc(90% - 1em);
-    margin: 3em auto;
-    padding: 1.2em 2em;
+    padding: 2em 0 .8em 0;
+    background-color: var(--bg);
+
     position: sticky;
-    top: 3em;
+    top: 0;
     z-index: 2;
+}
+
+.nav-content {
+    width: calc(90% - 1em);
+    margin: auto;
+    padding: 1.2em 2em;
 
     display: flex;
     justify-content: space-between;
