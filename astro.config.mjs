@@ -5,8 +5,10 @@ import sitemap from '@astrojs/sitemap';
 
 import preact from '@astrojs/preact';
 
+import expressiveCode from 'astro-expressive-code';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://example.com',
-    integrations: [mdx(), sitemap(), preact()],
+    integrations: [expressiveCode(), mdx(), sitemap(), preact()],
 });

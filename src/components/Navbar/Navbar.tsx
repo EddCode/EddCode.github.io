@@ -12,7 +12,6 @@ enum MenuItem {
 
 export default function Navbar(prop: { url?: MenuItem }) {
     const [item, setItem] = useState<MenuItem>(prop.url || MenuItem.HOME);
-    console.log(prop.url, 'url prop');
 
     const handleClick = (evt: Event) => {
         const target = evt.currentTarget as HTMLElement;

@@ -1,12 +1,37 @@
 ---
 ---
+<script>
+  import mermaid from "mermaid"
 
-<script> 
-import mermaid from "mermaid" 
+  mermaid.initialize({ startOnLoad: false })
+
+  function extractMermaidCode() {
+    const mermaidElements = document.querySelectorAll("figure.expandable-diagram")
+    mermaidElements.forEach((element) => {
+      const copyButton = element.querySelector(".copy button") as HTMLButtonElement
+      let code = copyButton.dataset.code as string
+      code = code.replace(/\u007F/g, "\n")
+      const preElement = document.createElement("pre")
+    
+      preElement.className = "mermaid not-prose"
+      preElement.innerHTML = code
+      const diagramContainer = element.querySelector(".diagram-content") as HTMLElement
+
+      diagramContainer.firstChild && diagramContainer.replaceChild(preElement, diagramContainer.firstChild);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    extractMermaidCode();
+    mermaid.initialize({ startOnLoad: true });
+  });
 </script>
 
-<figure>
-  <pre class="mermaid not-prose">
+<figure class="expandable-diagram">
+  <div class="diagram-content">Loading diagram...</div>
+
+  <details>
+    <summary>Source</summary>
     <slot />
-  </pre>
+  </details>
 </figure>

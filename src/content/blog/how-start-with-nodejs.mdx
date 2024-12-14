@@ -100,7 +100,7 @@ cuando la operación de E/S está completa, Node.js la coloca en una cola de cal
 
 <Mermaid>
 ```mermaid
-graph
+graph LR
 A[Codigo JS que escribimos] -- 50% js / 50% c++ --> B[Nodejs - Librerias Estandar]
 B --> C((V8)) --> E[30% js - 70% c++]
 B --> D((Libuv)) --> F[100% c++]
