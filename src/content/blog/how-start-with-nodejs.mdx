@@ -3,7 +3,7 @@ title: 'Como empezar con Node.js: Una Guía para Principiantes'
 description: 'Una Guía para Principiantes'
 author: 'Edgar Figueroa'
 pubDate: 'Dec 13 2024'
-heroImage: '/blog-placeholder-5.jpg'
+heroImage: '/start-with-nodejs.png'
 ---
 
 import Mermaid from '../../components/Markdown/Mermaid.astro'
@@ -100,7 +100,7 @@ cuando la operación de E/S está completa, Node.js la coloca en una cola de cal
 
 <Mermaid>
 ```mermaid
-graph LR
+flowchart LR
 A[Codigo JS que escribimos] -- 50% js / 50% c++ --> B[Nodejs - Librerias Estandar]
 B --> C((V8)) --> E[30% js - 70% c++]
 B --> D((Libuv)) --> F[100% c++]
