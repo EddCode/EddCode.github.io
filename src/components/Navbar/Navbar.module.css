@@ -50,6 +50,10 @@
         transition: all 0.5s ease-out;
     }
 
+    &.close {
+        align-self: flex-end;
+    }
+
     &.close > .btn-line {
         &:nth-child(1) {
             transform: rotate(45deg) translate(2px, 2px);
@@ -90,23 +94,41 @@
 
     .nav-content {
         margin-right: 5em;
-        width: 30px;
-        max-width: max-content;
-        backdrop-filer: blur(5px);
+        width: max-content;
+        backdrop-filter: blur(5px);
+        transition: all 5s ease-out;
 
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
+        gap: 3em;
 
         background: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.5)
         );
+
+        &.open {
+            height: 95vh;
+            position: absolute;
+        }
+
+        + .nav-item {
+            display: flex;
+            flex-flow: column nowrap;
+        }
     }
 
     .items, .title {
         display: none;
+    }
+
+    .items-open {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
     }
 
     .burger {
