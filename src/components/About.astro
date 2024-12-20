@@ -23,7 +23,10 @@ import SecctionTitles from "./SecctionTitles.astro";
             </p>
 
             <a href="/resume/Edgar-Figueroa.pdf" download="Edgar-Figueroa">
-                <button>Download CV</button>
+                <button>
+                    <img src="/public/icons/download.svg" alt="">
+                    Download CV
+                </button>
             </a>
         </div>
     </div>
@@ -35,7 +38,6 @@ import SecctionTitles from "./SecctionTitles.astro";
         flex-direction: column;
         align-items: center;
     }
-
      
     section > div {
         width: 100%;
@@ -73,6 +75,33 @@ import SecctionTitles from "./SecctionTitles.astro";
         text-align: justify;
         line-height: 1.5em;
 
+        display: flex;
+        flex-flow: wrap;
+
+        p {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 38px;
+
+            span {
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+
+        button {
+            padding: .8em 1.9em;
+
+            img {
+                width: 1.2em;
+                margin-right: .7em;
+            }
+        }
+
+        @media screen and (max-width: 920px) {
+            align-items: center;
+            justify-content: center;
+        }
         @media screen and (max-width: 420px ){
             min-width: 20rem;
         }
@@ -80,9 +109,5 @@ import SecctionTitles from "./SecctionTitles.astro";
     
     .description p:last-of-type {
         margin: 2rem 0;
-    }
-
-    span {
-        font-weight: bold;
     }
 </style>

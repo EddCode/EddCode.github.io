@@ -6,26 +6,34 @@
 
             <h2>Web Enginner</h2>
             <ul class="social">
-                <li>L</li>
-                <li>G</li>
+                <li>
+                    <a href="https://github.com/EddCode" target="_new">
+                        <img src="/public/icons/github.svg" alt="github.com" srcset="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/edgar-figueroa-gtz/" target="_new">
+                        <img src="/public/icons/linkdin.svg" alt="github.com" srcset="">
+                    </a>
+                </li>
             </ul>
 
             <button>Contact me</button>
 
             <div class="total-expirence">
                 <div>
-                    <span>6</span>
+                    <span>5+</span>
                     <p>Expiriences</p>
                 </div>
                 <hr>
                 <div>
-                    <span>2</span>
-                    <p>Projects Done</p>
+                    <span>500+</span>
+                    <p>Commits Done</p>
                 </div>
             </div>
         </div>
         <figure>
-            <img src="/hero.png" alt="image hero" loading="lazy"/>
+            <img src="/public/hero.svg" alt="image hero" loading="lazy"/>
         </figure>
     </div>
 </header>
@@ -37,12 +45,12 @@
         width: 100%;
 
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
 
         figure {
             width: 50%;
+            min-width: 400px;
 
             img {
                 width: 100%;
@@ -52,11 +60,21 @@
 
         @media screen and (max-width: 920px) {
             justify-content: center;
+            flex-wrap: wrap;
             gap: 2em;
         }
     }
 
     .header-content {
+
+        button {
+            padding: 12px 40px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 3%;
+            text-align: justify;
+        }
+
         @media screen and (max-width: 600px) {
             display: flex;
             flex-flow: wrap column;
@@ -67,16 +85,26 @@
     }
     span {
         color: var(--sub-text);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28.8px;
+        letter-spacing: 3%;
     }
 
     h1 {
-        font-size: 1.4em;
-        margin-top: .5em;
+        font-size: 28px;
+        line-height: 33.6px;
+        font-weight: 700;
+        letter-spacing: 3%;
     }
 
     h2 {
-        font-size: 4em;
-        margin: .5em 0;
+        font-size: 70px;
+        line-height: 84px;
+        font-weight: 900;
+        letter-spacing: 3%;
+
+        margin: .3em 0;
         background: var(--text-gradient);
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -96,12 +124,19 @@
 
             margin: 0 .5rem;
             padding: 2px;
-            width: 2rem;
-            height: 2rem;
+            width: 2.5em;
+            height: 2.5em;
 
             color: var(--sub-text);
             border: 1px solid var(--sub-text);
             border-radius: 100%;
+            a {
+                display: flex;
+                justify-content: center;
+            }
+            img {
+                width: 1.5em;
+            }
         }
     } 
 
@@ -121,8 +156,11 @@
             display: flex;
             flex-direction: column;
             span {
-                font-size: 1.2em;
-                font-weight: bold;
+                font-size: 24px;
+                font-weight: 800;
+                line-height: 28.8px;
+                letter-spacing: 3%;
+                text-align: justify;
                 color: var(--accent);
             }
             p {

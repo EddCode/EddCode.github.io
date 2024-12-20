@@ -12,6 +12,8 @@
     position: sticky;
     top: 0;
     z-index: 2;
+
+    
 }
 
 .nav-content {
@@ -29,8 +31,10 @@
 }
 
 .title {
-    background:  linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
     background-clip: text;
+    font-size: 24px;
+    font-weight: 600;
     -webkit-text-fill-color: transparent;
 }
 
@@ -39,9 +43,12 @@
 }
 
 .nav-item {
-    &:hover {
-        color: var(--text);
-        cursor: pointer;
+    a {
+        color: var(--text-accent);
+        &:hover {
+           color: var(--text);
+            cursor: pointer;
+        }
     }
 
     a.is-active {

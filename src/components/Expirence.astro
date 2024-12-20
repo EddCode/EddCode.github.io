@@ -93,10 +93,13 @@ import SecctionTitles from "./SecctionTitles.astro";
         li {
             cursor: pointer;
             text-align: center;
+            font-weight: 500;
+            line-height: 38px;
             transition: all ease-in-out .5s;
 
             span {
-                font-weight: 600;
+                font-weight: 800;
+                line-height: 38px;
             }
 
             &.is-active {
@@ -114,14 +117,11 @@ import SecctionTitles from "./SecctionTitles.astro";
         transition: all .3s ease;
 
         @media screen and (max-width: 920px) {
-            top: 3em;
+            top: 4em;
         }
 
         @media screen and (max-width: 600px) {
-            top: 4em;
-        }
-        @media screen and (max-width: 420px) {
-            top: 6em;
+            top: 7em;
         }
     }
 
@@ -134,14 +134,15 @@ import SecctionTitles from "./SecctionTitles.astro";
         }
 
         p {
-            line-height: 1.8em;
+            line-height: 38px;
             margin: 2em 0;
+            font-size: 20px;
             text-align: center;
         }
 
         & p:last-of-type {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 700;
         }
 
         ul {
@@ -195,4 +196,11 @@ import SecctionTitles from "./SecctionTitles.astro";
             }
         });
     } 
+
+    window.addEventListener('resize', () => {
+        const $activeTab = document.querySelector('.is-active') as HTMLElement
+        console.log('resize', $activeTab)
+        $line.style.width = $activeTab.offsetWidth + 'px';
+        $line.style.left = $activeTab.offsetLeft + 'px';
+    });
 </script>

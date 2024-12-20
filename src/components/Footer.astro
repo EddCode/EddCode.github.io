@@ -11,15 +11,26 @@
     </ul>
 
     <ul class="social">
-        <li>L</li>
-        <li>G</li>
+        <li>
+            <a href="https://github.com/EddCode" target="_new">
+                <img src="/public/icons/github.svg" alt="github.com" srcset="">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/edgar-figueroa-gtz/" target="_new">
+                <img src="/public/icons/linkdin.svg" alt="github.com" srcset="">
+            </a>
+        </li>
     </ul>
 
-    <a href="mailto:recipient@example.com">edgar.figueroa.gtz@gmail.com</a>
+    <a class="mail" href="mailto:recipient@example.com"> 
+        <img src="/public/icons/mail.svg" alt="">
+         edgar.figueroa.gtz@gmail.com
+    </a>
 
     <hr>
 
-    <p>Designed by <a href="https://danizavala.com">Daniel Zavala</a></p>
+    <p class="design-by">Designed by <a href="https://danizavala.com">Daniel Zavala</a></p>
 </footer>
 
 <style>
@@ -49,8 +60,10 @@
 
             li {
                 margin: 0 2em;
-                font-weight: 300;
-                font-size: 1.4em;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: 3%;
+                font-size: 20px;
             }
 
             :hover {
@@ -69,18 +82,35 @@
 
             margin: 0 .5rem;
             padding: 2px;
-            width: 2rem;
-            height: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
 
             color: var(--sub-text);
             border: 1px solid var(--sub-text);
             border-radius: 100%;
+
+            a {
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                width: 1.5rem;
+            }
         }
     }
 
-    .social + a {
-        font-weight: 600;
+    .mail {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 3%;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
     }
+    
 
     hr {
         width: 30%;
@@ -89,6 +119,9 @@
 
         & + p {
             color: var(--sub-text);
+            font-weight: 700;
+            line-height: 19.2px;
+            letter-spacing: 3%;
         }
     }
 </style>
