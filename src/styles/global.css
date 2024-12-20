@@ -1,8 +1,32 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Black.ttf') format('ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Blod.ttf') format('ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Regular.ttf') format('ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Light.ttf') format('ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
 
 :root {
 	--primary: #891cd8;

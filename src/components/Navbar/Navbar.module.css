@@ -1,7 +1,13 @@
 
 .nav {
-    padding: 2em 0 .8em 0;
-    background-color: var(--bg);
+    padding: 2em 0 0 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.5)
+    );
+    backdrop-filter: blur(5px);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.5);
 
     position: sticky;
     top: 0;
@@ -17,7 +23,6 @@
     justify-content: space-between;
     align-items: center;
 
-    background-color: var(--bg);
     border-radius: 3rem;
     box-shadow: 0 17px 23px -3px rgba(128, 0, 128, 0.3);
     border-top: 1px solid var(--primary);
