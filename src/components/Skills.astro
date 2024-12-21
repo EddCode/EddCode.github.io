@@ -8,24 +8,24 @@ import SecctionTitles from "./SecctionTitles.astro";
 
     <div class="skills-card">
         <div class="card">
-            <img src="icons/frontend.svg" alt="Frontend icon">
-            <h6>Front End</h6>
+            <img src="icons/frontend.svg" width="60" height="60" alt="Frontend icon">
+            <p class="skills-title">Front End</p>
             <p>
                 Proficient in modern frontend technologies. 
                 With experience building dynamic and responsive user interfaces. 
             </p>
         </div>
         <div class="card">
-            <img src="icons/backend.svg" alt="Backend Icon">
-            <h6>Back End</h6>
+            <img src="icons/backend.svg" width="60" height="60" alt="Backend Icon">
+            <p class="skills-title">Back End</p>
             <p>
                 Experienced in backend development with a focus on Node.js, 
                 leveraging frameworks to build efficient APIs and microservices. 
             </p>
         </div>
         <div class="card">
-            <img src="icons/database.svg" alt="Database Icon">
-            <h6>Database</h6>
+            <img src="icons/database.svg" width="60" height="60" alt="Database Icon">
+            <p class="skills-title">Database</p>
             <p>
                 Strong knowledge of both relational databases as well as NoSQL databases.
                 Skilled in designing scalable and efficient database schemas to support 
@@ -33,8 +33,8 @@ import SecctionTitles from "./SecctionTitles.astro";
             </p>
         </div>
         <div class="card">
-            <img src="icons/libs.svg" alt="Frameworks icon">
-            <h6>Frameworks & Libraries</h6>
+            <img src="icons/libs.svg" width="60" height="60" alt="Frameworks icon">
+            <p class="skills-title">Frameworks & Libraries</p>
             <p>
                 Expertise in using modern libraries and frameworks like <span>React.js</span>, 
                 <span>Styled-components</span>,
@@ -43,8 +43,8 @@ import SecctionTitles from "./SecctionTitles.astro";
             </p>
         </div>
         <div class="card">
-            <img src="icons/skills.svg" alt="Oher Icons">
-            <h6>Other skills</h6>
+            <img src="icons/skills.svg" width="60" height="60" alt="Oher Icons">
+            <p class="skills-title">Other skills</p>
             <p>
                 Well-versed in software architecture principles, including <span>TDD</span>, <span>DDD</span>, 
                 and Clean Architecture. 
@@ -85,7 +85,7 @@ import SecctionTitles from "./SecctionTitles.astro";
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         background: var(--bg-card);
 
-        h6 {
+        .skills-title {
             margin: 1em 0 1.5em 0;
             font-size: 24px;
             font-weight: 700;
@@ -94,7 +94,7 @@ import SecctionTitles from "./SecctionTitles.astro";
             color: var(--text-accent);
         }
 
-        p {
+        p:last-of-type {
             font-weight: 500;
             font-size: 20px;
             line-height: 32px;
