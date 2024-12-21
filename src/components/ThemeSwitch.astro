@@ -1,0 +1,33 @@
+<style is:global>
+    :global(.moon){
+        color-scheme: dark;
+        --background-color: #333333;
+        --text-color: #ffffff;
+    }
+
+    :global(.sun){
+        color-scheme: light;
+        
+        --background-color: #ffffff;
+        --text-color: #000000;
+    }
+
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+</style>
+
+<script>
+    const isPrefersDarkColorScheme = () =>
+        window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    function setTheme() {
+        let theme = 'sun'
+
+        isPrefersDarkColorScheme() && (theme = 'moon')
+        document.documentElement.classList.add(theme)
+    }
+
+    setTheme()
+</script>

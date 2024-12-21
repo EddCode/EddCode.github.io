@@ -1,0 +1,141 @@
+
+.nav {
+    padding: 2em 0 0 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.5)
+    );
+    backdrop-filter: blur(5px);
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.nav-content {
+    width: calc(90% - 1em);
+    margin: auto;
+    padding: 1.2em 2em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 3rem;
+    box-shadow: 0 17px 23px -3px rgba(128, 0, 128, 0.3);
+    border-top: 1px solid var(--primary);
+}
+
+.title {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+    background-clip: text;
+    font-size: 24px;
+    font-weight: 600;
+    -webkit-text-fill-color: transparent;
+}
+
+.burger {
+    display: none;
+    background-color: transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & > .btn-line {
+        width: 20px;
+        height: 1px;
+        background: var(--text-accent);
+        transition: all 0.5s ease-out;
+    }
+
+    &.close {
+        align-self: flex-end;
+    }
+
+    &.close > .btn-line {
+        &:nth-child(1) {
+            transform: rotate(45deg) translate(2px, 2px);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+}
+
+.nav-item {
+    a {
+        color: var(--text-accent);
+        &:hover {
+           color: var(--text);
+            cursor: pointer;
+        }
+    }
+
+    a.is-active {
+        color: var(--primary);
+        transition: color ease-out 0.3s;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        background: none;
+        backdrop-filter: none;
+    }
+
+    .nav-content {
+        margin-right: 5em;
+        width: max-content;
+        backdrop-filter: blur(5px);
+        transition: all 5s ease-out;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3em;
+
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.5)
+        );
+
+        &.open {
+            height: 95vh;
+            position: absolute;
+        }
+
+        + .nav-item {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+    }
+
+    .items, .title {
+        display: none;
+    }
+
+    .items-open {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1em;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+}

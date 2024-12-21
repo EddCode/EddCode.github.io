@@ -1,0 +1,103 @@
+---
+import { fade } from 'astro:transitions';
+
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar/Navbar.tsx';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+
+		<link rel="preload"as="image"href="/blog/blog-placeholder-about.jpg">
+		<link rel="preload"as="image"href="/blog/start-with-nodejs.png">
+
+		<link rel="prefetch"as="image"href="/blog/blog-placeholder-about.jpg">
+		<link rel="prefetch"as="image"href="/blog/start-with-nodejs.png">
+		
+	</head>
+
+	<body>
+		<Navbar client:visible transition:persist url='blog' />
+		<main transition:animate={fade({ duration: '0.4s' })}>
+			<article>
+				<figure class="hero-image">
+					{heroImage && <img src={heroImage} alt="" />}
+				</figure>
+				<div class="prose">
+					<div class="title">
+						<div class="date">
+							{
+								updatedDate && (
+									<div class="last-updated-on">
+										Last updated on {updatedDate} 
+									</div>
+								)
+							}
+						</div>
+						<h1>{title}</h1>
+						<hr />
+					</div>
+					<slot />
+				</div>
+			</article>
+		</main>
+	</body>
+	<!-- Google tag (gtag.js) -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
+	<script>
+	window.dataLayer = window.dataLayer || []
+	function gtag(){dataLayer.push(arguments)}
+	gtag('js', new Date())
+
+	gtag('config', 'G-R7E8T7BF73')
+	</script> -->
+</html>
+
+<style>
+	body {
+		margin: auto;
+	}
+	.hero-image img {
+		display: block;
+		margin: 0 auto 1.5em auto;
+		width: 100%;
+		border-radius: 12px;
+  		object-fit: cover;
+	}
+	.prose {
+		width: 70%;
+		max-width: calc(100% - 2em);
+		margin: 1em auto;
+		padding: 2em;
+		color: rgb(var(--gray-dark));
+		border-radius: 15px;
+		box-shadow: var(--box-shadow);
+		
+		@media screen and (max-width: 420px){
+			width: 100%;
+		}
+	}
+	.title {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		text-align: center;
+		line-height: 1;
+	}
+	.title h1 {
+		margin: 0 0 0.5em 0;
+		color: var(--primary);
+	}
+	.date {
+		margin-bottom: 0.5em;
+		color: rgb(var(--gray));
+	}
+	.last-updated-on {
+		font-style: italic;
+	}
+</style>

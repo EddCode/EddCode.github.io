@@ -1,0 +1,126 @@
+<footer>
+    <span>EDGAR FIGUEROA</span>
+
+    <ul class="navigation">
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#about">About Me</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/#expirence">Expirence</a></li>
+        <li><a href="/blog">Blog</a></li>
+    </ul>
+
+    <ul class="social">
+        <li>
+            <a href="https://github.com/EddCode" target="_new">
+                <img src="icons/github.svg" alt="github.com" width="25" height="25">
+            </a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/edgar-figueroa-gtz/" target="_new">
+                <img src="icons/linkdin.svg" alt="github.com" width="25" height="25">
+            </a>
+        </li>
+    </ul>
+
+    <a class="mail" href="mailto:recipient@example.com"> 
+        <img src="icons/mail.svg" alt="email" width="25" height="25">
+         edgar.figueroa.gtz@gmail.com
+    </a>
+
+    <hr>
+
+    <p class="design-by">Designed by <a href="https://danizavala.com">Daniel Zavala</a></p>
+</footer>
+
+<style>
+    footer {
+        padding: 3em 0 0 0;
+        background: var(--bg-box);
+
+        display: flex;
+        flex-flow: nowrap column;
+        align-items: center;
+
+        span {
+            font-size: 2.4em;
+            background:  linear-gradient(90deg, var(--primary) 0%, var(--accent) 95%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navigation {
+            margin: 4em 0 1em 0;
+            max-width: 80%;
+
+            justify-content: center;
+            row-gap: 1.5em;
+            flex-wrap: wrap;
+            transition: color ease-out 0.3s;
+
+            li {
+                margin: 0 2em;
+                font-weight: 500;
+                line-height: 24px;
+                letter-spacing: 3%;
+                font-size: 20px;
+            }
+
+            :hover {
+                color: var(--text-accent);
+            }
+        }
+    }
+
+    .social {
+        margin: 2rem 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 .5rem;
+            padding: 2px;
+            width: 2.5rem;
+            height: 2.5rem;
+
+            color: var(--sub-text);
+            border: 1px solid var(--sub-text);
+            border-radius: 100%;
+
+            a {
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                width: 1.5rem;
+            }
+        }
+    }
+
+    .mail {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 3%;
+
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+
+    hr {
+        width: 30%;
+        margin: 3em 0 1em 0;
+        border: 1px solid var(--sub-text);
+
+        & + p {
+            color: var(--sub-text);
+            font-weight: 700;
+            line-height: 19.2px;
+            letter-spacing: 3%;
+        }
+    }
+</style>

@@ -1,0 +1,211 @@
+<header id="home">
+    <div>
+        <div class="header-content">
+            <span>Hi I am</span>
+            <h1>Edgar Figueroa</h1>
+
+            <h2>Web Enginner</h2>
+            <ul class="social">
+                <li>
+                    <a href="https://github.com/EddCode" target="_new">
+                        <img src="icons/github.svg" alt="github.com" width="25" height="25">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/edgar-figueroa-gtz/" target="_new">
+                        <img src="icons/linkdin.svg" alt="github.com" width="25" height="25">
+                    </a>
+                </li>
+            </ul>
+
+            <button>Contact me</button>
+
+            <div class="total-expirence">
+                <div>
+                    <span class="experiences-counter">+</span>
+                    <p>Expiriences</p>
+                </div>
+                <hr>
+                <div>
+                    <span class="commits-counter">500+</span>
+                    <p>Commits Done</p>
+                </div>
+            </div>
+        </div>
+        <figure>
+            <img src="hero.svg" alt="image hero" width="400" height="400" loading="lazy"/>
+        </figure>
+    </div>
+</header>
+
+<style>
+    header > div {
+        margin: 4em 0;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        figure {
+            width: 50%;
+            min-width: 400px;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media screen and (max-width: 920px) {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+    }
+
+    .header-content {
+
+        button {
+            padding: 12px 40px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 3%;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 600px) {
+            display: flex;
+            flex-flow: wrap column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    }
+    span {
+        color: var(--sub-text);
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 28.8px;
+        letter-spacing: 3%;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 33.6px;
+        font-weight: 700;
+        letter-spacing: 3%;
+    }
+
+    h2 {
+        font-size: 70px;
+        line-height: 84px;
+        font-weight: 900;
+        letter-spacing: 3%;
+
+        margin: .3em 0;
+        background: var(--text-gradient);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media screen and (max-width: 600px) {
+           text-align: center; 
+        }
+    }
+
+    .social {
+        margin: 2rem 0;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 .5rem;
+            padding: 2px;
+            width: 2.5em;
+            height: 2.5em;
+
+            color: var(--sub-text);
+            border: 1px solid var(--sub-text);
+            border-radius: 100%;
+            a {
+                display: flex;
+                justify-content: center;
+            }
+            img {
+                width: 1.5em;
+            }
+        }
+    } 
+
+    .total-expirence {
+        margin: 2rem 0;
+        padding: 1rem .8rem;
+
+        display: flex;
+        align-content: center;
+        gap: 2em;
+
+        border-radius: 8px;
+        background-color: var(--bg-box);
+        width: max-content;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            span {
+                font-size: 24px;
+                font-weight: 800;
+                line-height: 28.8px;
+                letter-spacing: 3%;
+                text-align: justify;
+                color: var(--accent);
+            }
+            p {
+                margin: .5em 0 0 0;
+                color: var(--text-accent);
+            }
+        }
+
+        @media screen and (max-width: 420px) {
+            margin: 2rem auto;
+        }
+    }
+
+    .experiences-counter::before {
+        content: "";
+        animation: increment .5s steps(5) forwards;
+    }
+
+    @keyframes increment {
+        0% { content: "0"; }
+        20% { content: "1"; }
+        40% { content: "2"; }
+        60% { content: "3"; }
+        80% { content: "4"; }
+        100% { content: "5"; }
+    }
+</style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counterElement = document.querySelector('.commits-counter') as HTMLElement;
+        let count = 0
+        const target = 900
+        const increment = target / 100
+
+        const updateCounter = () => {
+            if (count < target) {
+                count += increment
+                counterElement.textContent = `${Math.ceil(count)}+`
+                return requestAnimationFrame(updateCounter)
+            }
+
+            counterElement.textContent = `${target}+`
+        };
+
+        updateCounter()
+    });
+</script>

@@ -1,0 +1,113 @@
+---
+import SecctionTitles from "./SecctionTitles.astro";
+---
+
+<section id="about">
+    <SecctionTitles title="About Me" description="Passionate Web Developer Commited To Creating Innovative And Efficient Sollutions" />
+
+    <div>
+        <figure>
+            <img src="/me.webp"  width=" 1197" height=" 1197" alt="photo of Edgar">
+        </figure>
+        <div class="description">
+            <p>
+                Hi, I'm <span>Edgar</span>, a web developer. I started my career in 2018 as a
+                professional developer. Through the expperience I have gained releasing 
+                several applications, I've designed app architectures and database
+                schemas while keeping the deployment of optimal features at the
+                center of what I do. I am passionate about creating applications that 
+                help automate and/or facilitate tasks. I'm excited to face new 
+                challenges, even with tools that I am not familiar with, so that I can 
+                expand my stack of tools for future challenges in order to decide what 
+                would be the best technology to solve any given, specific problem.
+            </p>
+
+            <a href="/resume/Edgar-Figueroa.pdf" download="Edgar-Figueroa">
+                <button>
+                    <img src="icons/download.svg" alt="resume download" width="25" height="25">
+                    Download CV
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+     
+    section > div {
+        width: 100%;
+        margin-top: 2rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: 920px) {
+            justify-content: center;
+            row-gap: 2em;
+        }
+    }
+
+    figure {
+        width: 40%;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @media screen and (max-width: 420px ){
+            width: 100%;
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .description {
+        width: 50%;
+        min-width: 30rem;
+        text-align: justify;
+        line-height: 1.5em;
+
+        display: flex;
+        flex-flow: wrap;
+
+        p {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 38px;
+
+            span {
+                font-size: 20px;
+                font-weight: 900;
+            }
+        }
+
+        button {
+            padding: .8em 1.9em;
+
+            img {
+                width: 1.2em;
+                margin-right: .7em;
+            }
+        }
+
+        @media screen and (max-width: 920px) {
+            align-items: center;
+            justify-content: center;
+        }
+        @media screen and (max-width: 420px ){
+            min-width: 20rem;
+        }
+    }
+    
+    .description p:last-of-type {
+        margin: 2rem 0;
+    }
+</style>

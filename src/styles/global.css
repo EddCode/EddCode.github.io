@@ -1,0 +1,119 @@
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Black.ttf') format('ttf');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Blod.ttf') format('ttf');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Regular.ttf') format('ttf');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Lato';
+	src: url('/fonts/Lato-Light.ttf') format('ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato-Thin.ttf') format('ttf');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+:root {
+	--primary: #891cd8;
+	--accent: #00af97;
+	--bg: #0e0e0e;
+	--bg-card: #171717;
+	--bg-box: #181818;
+	--text: #959595;
+	--text-accent: #FFFFFF;
+	--sub-text: #707070;
+	--text-card: #575757;
+
+
+	--text-gradient: linear-gradient(90deg, var(--primary) 0%, var(--accent) 35%);
+	--box-shadow: 0 0 10px 0 #959595c7;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	font-size: 16px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background: var(--bg);
+	color: var(--text);
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+h3 {
+	color: var(--accent);
+	font-size: 4rem;
+	font-weight: 500;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		margin: 0 1rem;
+	}
+}
+
+a {
+	color: var(--text);
+	text-decoration: none;
+	transition: color 0.2s;
+
+	&:hover {
+		color: var(--sub-text);
+		cursor: pointer;
+	}
+}
+
+button {
+	background: var(--primary);
+	color: var(--text-accent);
+	border: none;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: filter ease-in-out .3s;
+
+	&:hover {
+		background: var(--primary);
+		filter: contrast(1.5);
+	}
+}

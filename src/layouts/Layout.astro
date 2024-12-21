@@ -1,0 +1,34 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Navbar from "../components/Navbar/Navbar.tsx"
+
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
+
+let url = Astro.url
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <link rel="preload" as="image" href="/me.png">
+        <link rel="preload" as="image" href="/hero.svg">
+
+        <link rel="prefetch" as="image" href="/me.png">
+        <link rel="prefetch" as="image" href="/hero.svg">
+    </head>
+    
+    <body>
+		<Navbar client:visible transition:persist url={url} />
+        <slot />
+    </body>
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
+    <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js', new Date())
+
+    gtag('config', 'G-R7E8T7BF73')
+    </script> -->
+</html>

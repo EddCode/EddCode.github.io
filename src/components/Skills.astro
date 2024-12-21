@@ -1,0 +1,110 @@
+---
+import SecctionTitles from "./SecctionTitles.astro";
+---
+
+
+<section id="skills">
+    <SecctionTitles title="Skills & Tools" description="Proficencies and Tools to Deliver Exellence" />
+
+    <div class="skills-card">
+        <div class="card">
+            <img src="icons/frontend.svg" width="60" height="60" alt="Frontend icon">
+            <p class="skills-title">Front End</p>
+            <p>
+                Proficient in modern frontend technologies. 
+                With experience building dynamic and responsive user interfaces. 
+            </p>
+        </div>
+        <div class="card">
+            <img src="icons/backend.svg" width="60" height="60" alt="Backend Icon">
+            <p class="skills-title">Back End</p>
+            <p>
+                Experienced in backend development with a focus on Node.js, 
+                leveraging frameworks to build efficient APIs and microservices. 
+            </p>
+        </div>
+        <div class="card">
+            <img src="icons/database.svg" width="60" height="60" alt="Database Icon">
+            <p class="skills-title">Database</p>
+            <p>
+                Strong knowledge of both relational databases as well as NoSQL databases.
+                Skilled in designing scalable and efficient database schemas to support 
+                complex application requirements.
+            </p>
+        </div>
+        <div class="card">
+            <img src="icons/libs.svg" width="60" height="60" alt="Frameworks icon">
+            <p class="skills-title">Frameworks & Libraries</p>
+            <p>
+                Expertise in using modern libraries and frameworks like <span>React.js</span>, 
+                <span>Styled-components</span>,
+                and <span>Next.js</span> to create seamless user experiences. Proficient in testing frameworks 
+                like <span>Jest</span> for ensuring code quality and robustness.
+            </p>
+        </div>
+        <div class="card">
+            <img src="icons/skills.svg" width="60" height="60" alt="Oher Icons">
+            <p class="skills-title">Other skills</p>
+            <p>
+                Well-versed in software architecture principles, including <span>TDD</span>, <span>DDD</span>, 
+                and Clean Architecture. 
+                Skilled in cloud technologies such as <span>AWS (EC2, S3)</span> and <span>Firebase</span>, 
+                as well as CI/CD tools like
+                <span>GitHub Actions</span>, <span>Docker</span>. Bilingual with fluency in Spanish (Native) and English (B2).
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    section {
+        margin-top: 10em;
+    }
+
+    .skills-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        margin: 5em 0;
+    }
+
+    .card {
+        width: 30%;
+        min-width: 400px;
+        margin: 1em;
+        padding: 2em;
+        
+        display: flex;
+        flex-flow: nowrap column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 2em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background: var(--bg-card);
+
+        .skills-title {
+            margin: 1em 0 1.5em 0;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 38.4px;
+            letter-spacing: 3%;
+            color: var(--text-accent);
+        }
+
+        p:last-of-type {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 32px;
+            letter-spacing: 3%;
+            text-align: center;
+            color: #575757;
+        }
+
+        @media screen and (max-width: 420px ){
+            min-width: 300px;
+        }
+    }
+</style>
