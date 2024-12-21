@@ -8,12 +8,12 @@
             <ul class="social">
                 <li>
                     <a href="https://github.com/EddCode" target="_new">
-                        <img src="/public/icons/github.svg" alt="github.com" srcset="">
+                        <img src="icons/github.svg" alt="github.com" srcset="">
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/edgar-figueroa-gtz/" target="_new">
-                        <img src="/public/icons/linkdin.svg" alt="github.com" srcset="">
+                        <img src="icons/linkdin.svg" alt="github.com" srcset="">
                     </a>
                 </li>
             </ul>
@@ -22,24 +22,23 @@
 
             <div class="total-expirence">
                 <div>
-                    <span>5+</span>
+                    <span class="experiences-counter">+</span>
                     <p>Expiriences</p>
                 </div>
                 <hr>
                 <div>
-                    <span>500+</span>
+                    <span class="commits-counter">500+</span>
                     <p>Commits Done</p>
                 </div>
             </div>
         </div>
         <figure>
-            <img src="/public/hero.svg" alt="image hero" loading="lazy"/>
+            <img src="hero.svg" alt="image hero" loading="lazy"/>
         </figure>
     </div>
 </header>
 
 <style>
-
     header > div {
         margin: 4em 0;
         width: 100%;
@@ -173,4 +172,40 @@
             margin: 2rem auto;
         }
     }
+
+    .experiences-counter::before {
+        content: "";
+        animation: increment .5s steps(5) forwards;
+    }
+
+    @keyframes increment {
+        0% { content: "0"; }
+        20% { content: "1"; }
+        40% { content: "2"; }
+        60% { content: "3"; }
+        80% { content: "4"; }
+        100% { content: "5"; }
+    }
 </style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counterElement = document.querySelector('.commits-counter') as HTMLElement;
+        let count = 0
+        const target = 900
+        const increment = target / 100
+
+        const updateCounter = () => {
+            if (count < target) {
+                count += increment
+                counterElement.textContent = `${Math.ceil(count)}+`
+                return requestAnimationFrame(updateCounter)
+            }
+
+            counterElement.textContent = `${target}+`
+        };
+
+        updateCounter()
+    });
+</script>

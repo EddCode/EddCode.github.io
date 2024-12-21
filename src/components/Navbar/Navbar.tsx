@@ -11,11 +11,10 @@ enum MenuItem {
 }
 
 export default function Navbar(prop: { url?: MenuItem }) {
-    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(true)
+    const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
     const [item, setItem] = useState<MenuItem>(prop.url || MenuItem.HOME);
 
     const toogleMenu = () => {
-        console.log('toogleMenu');
         setIsOpenMenu(!isOpenMenu);
     }
 
@@ -23,6 +22,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
         const target = evt.currentTarget as HTMLElement;
         setItem(target.getAttribute('data-item') as MenuItem);
         prop.url = target.getAttribute('data-item') as MenuItem;
+        setIsOpenMenu(false);
     }
 
     return (
