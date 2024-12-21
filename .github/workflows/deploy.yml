@@ -21,7 +21,6 @@ jobs:
         with:
           package-manager: yarn
           node-version: 23
-          cache: yarn
 
   deploy:
     needs: build
