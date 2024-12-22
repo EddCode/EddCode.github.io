@@ -5,9 +5,9 @@ import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Navbar, { MenuItem } from '../components/Navbar/Navbar.tsx';
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data'] & {id: string};
 
-const { title, description, updatedDate, heroImage } = Astro.props;
+const { id, title, description, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -24,10 +24,10 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 
 	<body>
 		<Navbar client:visible transition:persist url={MenuItem.BLOG} isNavAbsolute />
-		<main transition:animate={fade({ duration: '0.4s' })}
+		<main transition:animate={fade({ duration: '0.4s' })}>
 			<article>
 				<figure class="hero-image">
-					{heroImage && <img src={heroImage} alt="" />}
+					{heroImage && <img transition:name={`post-img-${id}`} src={heroImage} alt="" />}
 				</figure>
 				<div class="prose">
 					<div class="title">
@@ -40,7 +40,7 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 								)
 							}
 						</div>
-						<h1>{title}</h1>
+						<h1 transition:name={`post-title-${id}`}>{title}</h1>
 						<hr />
 					</div>
 					<slot />
@@ -48,15 +48,7 @@ const { title, description, updatedDate, heroImage } = Astro.props;
 			</article>
 		</main>
 	</body>
-	<!-- Google tag (gtag.js) -->
-	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
-	<script>
-	window.dataLayer = window.dataLayer || []
-	function gtag(){dataLayer.push(arguments)}
-	gtag('js', new Date())
-
-	gtag('config', 'G-R7E8T7BF73')
-	</script> -->
+	
 </html>
 
 <style>

@@ -31,9 +31,9 @@ const posts = (await getCollection('blog')).sort(
 					<li>
 						<a href={`/blog/${post.id}/`}>
 							<figure>
-								<img  src={post.data.heroImage} alt={post.id} loading="lazy" />
+								<img transition:name={`post-img-${post.id}`} src={post.data.heroImage} alt={post.id} loading="lazy" />
 							</figure>
-							<h4 class="title">{post.data.title}</h4>
+							<h4 transition:name={`post-title-${post.id}`} class="title">{post.data.title}</h4>
 							<p class="date">
 								{
 									new Intl.DateTimeFormat('es-MX', {
