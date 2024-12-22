@@ -1,6 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Navbar from "../components/Navbar/Navbar.tsx";
+import Navbar, { MenuItem } from "../components/Navbar/Navbar.tsx";
 
 import { BLOG_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
@@ -11,18 +11,18 @@ import { BLOG_DESCRIPTION, SITE_TITLE } from "../consts";
 		<BaseHead title={SITE_TITLE} description={BLOG_DESCRIPTION} />
 	</head>
 	<body>
-		<Navbar client:visible transition:persist url="blog"/>
+		<Navbar client:visible transition:persist url={MenuItem.BLOG}/>
 		<main>
             <slot />
 		</main>
 	</body>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
 	<script>
 		window.dataLayer = window.dataLayer || []
 		function gtag(){dataLayer.push(arguments)}
 		gtag('js', new Date())
 		gtag('config', 'G-R7E8T7BF73')
-	</script>
+	</script> -->
 </html>
 
 

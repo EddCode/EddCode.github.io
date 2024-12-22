@@ -1,10 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro"
-import Navbar from "../components/Navbar/Navbar.tsx"
+import Navbar, { MenuItem } from "../components/Navbar/Navbar.tsx"
 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
 
-let url = Astro.url
+let url = Astro.url as unknown as MenuItem
 ---
 
 <!doctype html>
@@ -19,15 +19,15 @@ let url = Astro.url
     </head>
     
     <body>
-		<Navbar client:visible transition:persist url={url} />
+		<Navbar client:visible transition:persist url={url} isNavAbsolute/>
         <slot />
     </body>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7E8T7BF73"></script>
     <script>
         window.dataLayer = window.dataLayer || []
         function gtag(){dataLayer.push(arguments)}
         gtag('js', new Date())
         gtag('config', 'G-R7E8T7BF73')
-    </script>
+    </script> -->
 </html>

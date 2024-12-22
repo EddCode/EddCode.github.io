@@ -90,7 +90,14 @@
         justify-content: flex-end;
         background: none;
         backdrop-filter: none;
+
+        &[data-navabsolute="true"] {
+        position: absolute;
+            right: 0;
+        }
     }
+
+    
 
     .nav-content {
         margin-right: 1.2em;

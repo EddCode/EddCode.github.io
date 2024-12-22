@@ -1,7 +1,7 @@
 import { useState } from 'preact/hooks';
 import style from './Navbar.module.css';
 
-enum MenuItem {
+export enum MenuItem {
     HOME = 'home',
     ABOUT = 'about',
     SKILLS = 'skills',
@@ -10,7 +10,7 @@ enum MenuItem {
     BLOG = 'blog'
 }
 
-export default function Navbar(prop: { url?: MenuItem }) {
+export default function Navbar(prop: { url?: MenuItem, isNavAbsolute?: boolean }) {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false)
     const [item, setItem] = useState<MenuItem>(prop.url || MenuItem.HOME);
 
@@ -26,8 +26,7 @@ export default function Navbar(prop: { url?: MenuItem }) {
     }
 
     return (
-
-        <nav className={style.nav}>
+        <nav className={style.nav} data-navabsolute={prop.isNavAbsolute}>
             <div className={`${isOpenMenu ? `${style['nav-content']} ${style.open}` : style['nav-content']}`}>
                 <h2 className={style.title}>EDGAR FIGUEROA</h2>
                 <div className={ isOpenMenu ? `${style.close} ${style.burger}` : style.burger} onClick={toogleMenu}>
