@@ -71,7 +71,7 @@ const posts = (await getCollection('blog')).sort(
 			border-radius: 10px;
 			transition: all .3s ease;
 			&:hover {
-				box-shadow: 0 0 15px #00af9892;
+				box-shadow: var(--box-shadow);
 				transform: scale(1.05);
 			}
 
