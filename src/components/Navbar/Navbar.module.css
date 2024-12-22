@@ -92,7 +92,7 @@
         backdrop-filter: none;
 
         &[data-navabsolute="true"] {
-        position: absolute;
+            position: fixed;
             right: 0;
         }
     }
