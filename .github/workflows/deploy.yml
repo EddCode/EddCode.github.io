@@ -20,7 +20,7 @@ jobs:
         uses: withastro/action@v3
         with:
           package-manager: yarn
-          node-version: 23
+          node-version: 20
 
   deploy:
     needs: build
